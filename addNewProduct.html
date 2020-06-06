@@ -1,0 +1,2159 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Control Panel</title>
+    <meta charset="utf-8">
+    <link rel=icon href="asset/img/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="asset/css/icm.css" type="text/css">
+    <link rel="stylesheet" href="asset/css/theme.css" type="text/css">
+    <script src="asset/js/script2.js" type="text/javascript"></script>
+    <script src="asset/js/script1.js"></script>
+    <script>
+        window.Res = {
+            "Common.Notification": "Alert",
+            "Common.Close": "Close",
+            "Common.On": "On",
+            "Common.OK": "OK",
+            "Common.Cancel": "Cancel",
+            "Common.Off": "Off",
+            "Products.Longdesc.More": "Show more",
+            "Products.Longdesc.Less": "Show less",
+            "Jquery.Validate.Email": "Please enter a valid email address.",
+            "Jquery.Validate.Required": "This field is required.",
+            "Jquery.Validate.Remote": "Please fix this field.",
+            "Jquery.Validate.Url": "Please enter a valid URL.",
+            "Jquery.Validate.Date": "Please enter a valid date.",
+            "Jquery.Validate.DateISO": "Please enter a valid date (ISO).",
+            "Jquery.Validate.Number": "Please enter a valid number.",
+            "Jquery.Validate.Digits": "Please enter only digits.",
+            "Jquery.Validate.Creditcard": "Please enter a valid credit card number.",
+            "Jquery.Validate.Equalto": "Please enter the same value again.",
+            "Jquery.Validate.Maxlength": "Please enter no more than {0} characters.",
+            "Jquery.Validate.Minlength": "Please enter at least {0} characters.",
+            "Jquery.Validate.Rangelength": "Please enter a value between {0} and {1} characters long.",
+            "jquery.Validate.Range": "Please enter a value between {0} and {1}.",
+            "Jquery.Validate.Max": "Please enter a value less than or equal to {0}.",
+            "Jquery.Validate.Min": "Please enter a value greater than or equal to {0}.",
+            "Admin.Common.AreYouSure": "Are you sure?",
+        };
+    </script>
+    <script>
+        try {
+            if (typeof navigator === 'undefined') navigator = {};
+            html = document.documentElement;
+            if (/Edge\/\d+/.test(navigator.userAgent)) { html.className += ' edge' }
+            else if ('mozMatchesSelector' in html) { html.className += ' moz' }
+            else if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) { html.className += ' ios' }
+            else if ('webkitMatchesSelector' in html) { html.className += ' wkit' };
+            html.className += (this.top === this.window ? ' not-' : ' ') + 'framed';
+        } catch (e) { }
+    </script>
+    <script>var ieMode = 0; try { if (document.documentMode) { ieMode = document.documentMode; html.className += ' ie iepost8 ie' + document.documentMode } else { html.className += ' not-ie' }; } catch (e) { }; navigator.isIE = ieMode</script>
+
+
+</head>
+
+<body>
+
+
+    <div id="page">
+
+
+        <div class="page-main">
+            <header id="header">
+                <nav id="navbar" class="navbar navbar-dark navbar-expand">
+
+                    <a class="navbar-brand mx-0 mr-3" href="/backend/Admin">
+
+                        <img class="navbar-img d-none d-lg-block" src="asset/img/logo.png" alt="newSolutions.com">
+                        <img class="navbar-img d-lg-none" src="asset/img/logo.png" alt="newSolutions.com">
+                    </a>
+
+                    <div id="navbar-menu" class="collapse navbar-collapse mr-auto">
+
+                        <ul class="navbar-nav">
+                            <li data-id="nav-dashboard" class="nav-item dropdown d-none d-md-block">
+                                <a class="nav-link" href="index.html">
+                                    <i class="icm icm-icm icm-home navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Dashboard</span>
+                                </a>
+                            </li>
+                            <li data-id="nav-catalog" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-cube navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Catalog</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="categories-list">
+                                        <a class="dropdown-item" href="Category.html">
+                                            <i class="fa-fw fa fa-sitemap"></i>
+                                            Categories
+                                        </a>
+                                    </li>
+                                    <li data-id="products">
+                                        <a class="dropdown-item" href="products.html">
+                                            <i class="fa-fw fa fa-cube"></i>
+                                            Manage products
+                                        </a>
+                                    </li>
+                                    <li data-id="attributes">
+                                        <a class="dropdown-item" href="productattr.html">
+                                            <i class="fa-fw far fa-list-alt"></i>
+                                            Product Attributes
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="attributes-header" class="dropdown-header h6">Attributes
+                                    </li>
+
+                                    <li data-id="reviews">
+                                        <a class="dropdown-item" href="viewProducts.html">
+                                            <i class="fa-fw far fa-star-half"></i>
+                                            Product reviews
+                                        </a>
+                                    </li>
+
+
+                                    <li data-id="stockreport">
+                                        <a class="dropdown-item" href="lowstockReport.html">
+                                            <i class="fa-fw fa fa-sort-numeric-down"></i>
+                                            Low stock report
+                                        </a>
+                                    </li>
+
+
+
+                                </ul>
+                            </li>
+                            <li data-id="nav-sales" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-chart-growth navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Sales</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="orders">
+                                        <a class="dropdown-item" href="order.html">
+                                            <i class="fa-fw far fa-chart-bar"></i>
+                                            Orders
+                                        </a>
+                                    </li>
+                                    <li data-id="shipments">
+                                        <a class="dropdown-item" href="shipment.html">
+                                            <i class="fa-fw fa fa-truck-moving fa-flip-horizontal"></i>
+                                            Shipments
+                                        </a>
+                                    </li>
+
+
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="shopping-carts">
+                                        <a class="dropdown-item" href="currentShopping.html">
+                                            <i class="fa-fw fa fa-cart-arrow-down"></i>
+                                            Current shopping carts
+                                        </a>
+                                    </li>
+                                    <li data-id="flopsellers">
+                                        <a class="dropdown-item" href="productNeverPurchase.html">
+                                            <i class="fa-fw far fa-thumbs-down"></i>
+                                            Products never purchased
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="bestsellers">
+                                        <a class="dropdown-item" href="bestSellers.html">
+                                            <i class="fa-fw far fa-thumbs-up"></i>
+                                            Bestsellers
+                                        </a>
+                                    </li>
+                                    <li data-id="wishlists">
+                                        <a class="dropdown-item" href="wishList.html">
+                                            <i class="fa-fw far fa-heart"></i>
+                                            Current wishlists
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li data-id="nav-users" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-users2 navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Customers</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="customers">
+                                        <a class="dropdown-item" href="customers.html">
+                                            <i class="fa-fw fa fa-user-alt"></i>
+                                            Customers
+                                        </a>
+                                    </li>
+                                    <li data-id="customer-roles">
+                                        <a class="dropdown-item" href="customRoles.html">
+                                            <i class="fa-fw fa fa-users"></i>
+                                            Customer roles
+                                        </a>
+                                    </li>
+                                    <li data-id="online-customers">
+                                        <a class="dropdown-item" href="customonline.html">
+                                            <i class="fa-fw fa fa-sign-in-alt"></i>
+                                            Online customers
+                                        </a>
+                                    </li>
+                                    <li data-id="customer-reports">
+                                        <a class="dropdown-item" href="customReport.html">
+                                            <i class="fa-fw far fa-chart-bar"></i>
+                                            Customer reports
+                                        </a>
+                                    </li>
+                                    <li data-id="external-auth">
+                                        <a class="dropdown-item" href="extrnalMethod.html">
+                                            <i class="fa-fw fab fa-facebook-square"></i>
+                                            External authentication methods
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="activity-log">
+                                        <a class="dropdown-item" href="activityLog.html">
+                                            <i class="fa-fw far fa-eye"></i>
+                                            Activity Log
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-promotions" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-bullhorn navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Promotions</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="discounts">
+                                        <a class="dropdown-item" href="discount.html">
+                                            <i class="fa-fw fa fa-signal fa-flip-horizontal"></i>
+                                            Discounts
+                                        </a>
+                                    </li>
+                                    <li data-id="affiliates">
+                                        <a class="dropdown-item" href="Affiliate.html">
+                                            <i class="fa-fw fa fa-user-friends"></i>
+                                            Affiliates
+                                        </a>
+                                    </li>
+                                    <li data-id="newsletter-subscribers">
+                                        <a class="dropdown-item" href="NewsLetterSubscription.html">
+                                            <i class="fa-fw fa fa-envelope"></i>
+                                            Newsletter Subscribers
+                                        </a>
+                                    </li>
+                                    <li data-id="campaigns">
+                                        <a class="dropdown-item" href="Campaign.html">
+                                            <i class="fa-fw fa fa-bullhorn"></i>
+                                            Campaigns
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-cms" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-site-map navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">CMS</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="topics">
+                                        <a class="dropdown-item" href="cmsTopics.html">
+                                            <i class="fa-fw far fa-file-alt"></i>
+                                            Topics
+                                        </a>
+                                    </li>
+                                    <li data-id="8537124912">
+                                        <a class="dropdown-item" href="cms-pageBuilder.html">
+                                            <i class="fa-fw fa fa-th-large"></i>
+                                            Page Builder
+                                        </a>
+                                    </li>
+                                    <li data-id="menus">
+                                        <a class="dropdown-item" href="cms-menus.html">
+                                            <i class="fa-fw far fa-stream"></i>
+                                            Menus
+                                        </a>
+                                    </li>
+                                    <li data-id="news" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw far fa-newspaper"></i>
+                                            News
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="news-items">
+                                                <a class="dropdown-item" href="new-newsItem.html">
+                                                    News items
+                                                </a>
+                                            </li>
+                                            <li data-id="news-comments">
+                                                <a class="dropdown-item" href="newsComment.html">
+                                                    News comments
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="blog" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-blog"></i>
+                                            Blog
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="blog-posts">
+                                                <a class="dropdown-item" href="cms-Blog.html">
+                                                    Blog posts
+                                                </a>
+                                            </li>
+                                            <li data-id="blog-comments">
+                                                <a class="dropdown-item" href="/backend/Admin/Blog/Comments">
+                                                    Blog comments
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="forums">
+                                        <a class="dropdown-item" href="/backend/Admin/Forum/List">
+                                            <i class="fa-fw fa fa-users"></i>
+                                            Forums
+                                        </a>
+                                    </li>
+                                    <li data-id="message-templates">
+                                        <a class="dropdown-item" href="/backend/Admin/MessageTemplate/List">
+                                            <i class="fa-fw far fa-envelope"></i>
+                                            Message templates
+                                        </a>
+                                    </li>
+                                    <li data-id="polls">
+                                        <a class="dropdown-item" href="/backend/Admin/Poll/List">
+                                            <i class="fa-fw fa fa-tasks"></i>
+                                            Polls
+                                        </a>
+                                    </li>
+                                    <li data-id="widgets">
+                                        <a class="dropdown-item" href="/backend/Admin/Widget/Providers">
+                                            <i class="fa-fw fa fa-plus-square"></i>
+                                            Widgets
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-configuration" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-equalizer navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Configuration</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="settings" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-sliders-h"></i>
+                                            Settings
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="general-settings">
+                                                <a class="dropdown-item" href="miscellaneousSettings.html">
+                                                    General and
+                                                    miscellaneous
+                                                    settings
+                                                </a>
+                                            </li>
+                                            <li data-id="catalog-settings">
+                                                <a class="dropdown-item" href="catalogSetting.html">
+                                                    Catalog settings
+                                                </a>
+                                            </li>
+                                            <li data-id="search-settings">
+                                                <a class="dropdown-item" href="searchSetting.html">
+                                                    Search
+                                                </a>
+                                            </li>
+                                            <li data-id="customer-settings">
+                                                <a class="dropdown-item" href="CustomerUserSetting.html">
+                                                    Customer
+                                                    settings
+                                                </a>
+                                            </li>
+                                            <li data-id="cart-settings">
+                                                <a class="dropdown-item" href="shoppingCartSettings.html">
+                                                    Shopping cart
+                                                    settings
+                                                </a>
+                                            </li>
+                                            <li data-id="order-settings">
+                                                <a class="dropdown-item" href="orderSettings.html">
+                                                    Order settings
+                                                </a>
+                                            </li>
+                                            <li data-id="payment-settings">
+                                                <a class="dropdown-item" href="paymentSettings.html">
+                                                    Payment
+                                                </a>
+                                            </li>
+                                            <li data-id="media-settings">
+                                                <a class="dropdown-item" href="mediaSettings.html">
+                                                    Media settings
+                                                </a>
+                                            </li>
+                                            <li data-id="tax-settings">
+                                                <a class="dropdown-item" href="taxSettings.html">
+                                                    Tax settings
+                                                </a>
+                                            </li>
+                                            <li data-id="shipping-settings">
+                                                <a class="dropdown-item" href="ShippingSettings.html">
+                                                    Shipping
+                                                    settings
+                                                </a>
+                                            </li>
+                                            <li data-id="reward-points-settings">
+                                                <a class="dropdown-item" href="RewardPoints.html">
+                                                    Reward points
+                                                </a>
+                                            </li>
+                                            <li data-id="blog-settings">
+                                                <a class="dropdown-item" href="BlogSetting.html">
+                                                    Blog settings
+                                                </a>
+                                            </li>
+                                            <li data-id="news-settings">
+                                                <a class="dropdown-item" href="NewsSettings.html">
+                                                    News settings
+                                                </a>
+                                            </li>
+                                            <li data-id="forum-settings">
+                                                <a class="dropdown-item" href="ForumSettings.html">
+                                                    Forum settings
+                                                </a>
+                                            </li>
+                                            <li data-id="dataexchange-settings">
+                                                <a class="dropdown-item" href="exchangeSettings.html">
+                                                    Data exchange
+                                                </a>
+                                            </li>
+                                            <li class="dropdown-divider">
+                                            </li>
+                                            <li data-id="all-settings">
+                                                <a class="dropdown-item" href="AllSettings.html">
+                                                    All settings
+                                                    (advanced)
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="stores">
+                                        <a class="dropdown-item" href="store.html"> <i class="fa-fw fa fa-globe"></i>
+                                            Stores
+                                        </a>
+                                    </li>
+                                    <li data-id="regional-settings" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-language"></i>
+                                            Regional Settings
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="countries">
+                                                <a class="dropdown-item" href="/backend/Admin/Country/List">
+                                                    Countries
+                                                </a>
+                                            </li>
+                                            <li data-id="languages">
+                                                <a class="dropdown-item" href="/backend/Admin/Language/List">
+                                                    Languages
+                                                </a>
+                                            </li>
+                                            <li data-id="currencies">
+                                                <a class="dropdown-item" href="/backend/Admin/Currency/List">
+                                                    Currencies
+                                                </a>
+                                            </li>
+                                            <li class="dropdown-divider">
+                                            </li>
+                                            <li data-id="shipping-header" class="dropdown-header h6">
+                                                Shipping</li>
+                                            <li data-id="shipping-methods">
+                                                <a class="dropdown-item" href="/backend/Admin/Shipping/Methods">
+                                                    Shipping methods
+                                                </a>
+                                            </li>
+                                            <li data-id="shipping-providers">
+                                                <a class="dropdown-item" href="/backend/Admin/Shipping/Providers">
+                                                    Shipping rate
+                                                    computation
+                                                    methods
+                                                </a>
+                                            </li>
+                                            <li class="dropdown-divider">
+                                            </li>
+                                            <li data-id="tax-header" class="dropdown-header h6">
+                                                Tax</li>
+                                            <li data-id="tax-providers">
+                                                <a class="dropdown-item" href="/backend/Admin/Tax/Providers">
+                                                    Tax providers
+                                                </a>
+                                            </li>
+                                            <li data-id="tax-categories">
+                                                <a class="dropdown-item" href="/backend/Admin/Tax/Categories">
+                                                    Tax categories
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="payment-methods">
+                                        <a class="dropdown-item" href="paymentsMethod.html">
+                                            <i class="fa-fw far fa-credit-card"></i>
+                                            Payment methods
+                                        </a>
+                                    </li>
+                                    <li data-id="list-settings" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-bars"></i>
+                                            Lists
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="delivery-times">
+                                                <a class="dropdown-item" href="/backend/Admin/DeliveryTime/List">
+                                                    Delivery Times
+                                                </a>
+                                            </li>
+                                            <li data-id="quantity-units">
+                                                <a class="dropdown-item" href="/backend/Admin/QuantityUnit/List">
+                                                    Quantity units
+                                                </a>
+                                            </li>
+                                            <li data-id="weights">
+                                                <a class="dropdown-item" href="/backend/Admin/Measure/Weights">
+                                                    Weights
+                                                </a>
+                                            </li>
+                                            <li data-id="dimensions">
+                                                <a class="dropdown-item" href="/backend/Admin/Measure/Dimensions">
+                                                    Dimensions
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="email-accounts">
+                                        <a class="dropdown-item" href="emailAccounts.html">
+                                            <i class="fa-fw fa fa-envelope"></i>
+                                            Email Accounts
+                                        </a>
+                                    </li>
+                                    <li data-id="activity-types">
+                                        <a class="dropdown-item" href="ListTypes.html">
+                                            <i class="fa-fw fa fa-eye"></i>
+                                            Activity Types
+                                        </a>
+                                    </li>
+                                    <li data-id="acl">
+                                        <a class="dropdown-item" href="Permissions.html">
+                                            <i class="fa-fw fa fa-lock"></i>
+                                            Access control list
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="import">
+                                        <a class="dropdown-item" href="import.html">
+                                            <i class="fa-fw fa fa-download "></i>
+                                            Import
+                                        </a>
+                                    </li>
+                                    <li data-id="export">
+                                        <a class="dropdown-item" href="/backend/Admin/Export/List">
+                                            <i class="fa-fw fa fa-upload "></i>
+                                            Export
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="themes">
+                                        <a class="dropdown-item" href="/backend/Admin/Theme/List">
+                                            <i class="fa-fw fa fa-fill-drip"></i>
+                                            Themes
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-system" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-database navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">System</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="system-log">
+                                        <a class="dropdown-item" href="log.html">
+                                            <i class="fa-fw fa fa-fire"></i>
+                                            Log
+                                        </a>
+                                    </li>
+                                    <li data-id="queued-emails">
+                                        <a class="dropdown-item" href="MessageQueue.html">
+                                            <i class="fa-fw fa fa-mail-bulk"></i>
+                                            Message Queue
+                                        </a>
+                                    </li>
+                                    <li data-id="maintenance">
+                                        <a class="dropdown-item" href="Maintenance.html">
+                                            <i class="fa-fw fa fa-database"></i>
+                                            Maintenance
+                                        </a>
+                                    </li>
+                                    <li data-id="scheduled tasks">
+                                        <a class="dropdown-item" href="scheduledTasks.html">
+                                            <i class="fa-fw far fa-clock"></i>
+                                            Scheduled Tasks
+                                        </a>
+                                    </li>
+                                    <li data-id="seo-names">
+                                        <a class="dropdown-item" href="seo.html">
+                                            <i class="fa-fw fa fa-search"></i>
+                                            SEO Names
+                                        </a>
+                                    </li>
+                                    <li data-id="warnings">
+                                        <a class="dropdown-item" href="warning.html">
+                                            <i class="fa-fw fa fa-exclamation-triangle"></i>
+                                            Warnings
+                                        </a>
+                                    </li>
+                                    <li data-id="system-info">
+                                        <a class="dropdown-item" href="systemInfo.html">
+                                            <i class="fa-fw fa fa-info-circle"></i>
+                                            System information
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-plugins" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-puzzle navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Plugins</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="6986192304">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Clickatell">
+                                            <i class="fa-fw far fa-paper-plane"></i>
+                                            Clickatell SMS Provider
+                                        </a>
+                                    </li>
+                                    <li data-id="2056891916">
+                                        <a class="dropdown-item" href="/backend/Plugins/SmartStore.SearchLog/List">
+                                            <i class="fa-fw fa fa-search"></i>
+                                            Search Log
+                                        </a>
+                                    </li>
+                                    <li data-id="1628231328">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.GDPR">
+                                            <i class="fa-fw fa fa-user-secret"></i>
+                                            GDPR
+                                        </a>
+                                    </li>
+                                    <li data-id="3781333941">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.MegaSearch">
+                                            <i class="fa-fw fa fa-search"></i>
+                                            MegaSearch
+                                        </a>
+                                    </li>
+                                    <li data-id="0807670791">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Azure">
+                                            <i class="fa-fw fab fa-windows"></i>
+                                            Microsoft Azure Services
+                                        </a>
+                                    </li>
+                                    <li data-id="0474097937">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Mailchimp">
+                                            <i class="fa-fw fab fa-mailchimp"></i>
+                                            MailChimp e-mail synchronization
+                                        </a>
+                                    </li>
+                                    <li data-id="7801042325">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.TinyImage">
+                                            <i class="fa-fw fa fa-compress-arrows-alt"></i>
+                                            TinyImage
+                                        </a>
+                                    </li>
+                                    <li data-id="6159526415">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.DevTools">
+                                            <i class="fa-fw far fa-terminal"></i>
+                                            Developer Tools
+                                        </a>
+                                    </li>
+                                    <li data-id="3440880303">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.OutputCache">
+                                            <i class="fa-fw far fa-hdd"></i>
+                                            Output Cache
+                                        </a>
+                                    </li>
+                                    <li data-id="5367428861">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.OrderNumberFormatter">
+                                            <i class="fa-fw far fa-file"></i>
+                                            Number Formatter
+                                        </a>
+                                    </li>
+                                    <li data-id="4743489788">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.GoogleMerchantCenter">
+                                            <i class="fa-fw fab fa-google"></i>
+                                            Google Merchant Center feed
+                                        </a>
+                                    </li>
+                                    <li data-id="3278434032">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.BizImporter">
+                                            <i class="fa-fw"></i>
+                                            SmartStore.biz Importer
+                                        </a>
+                                    </li>
+                                    <li data-id="4828935853">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Debitoor">
+                                            <i class="fa-fw fas fa-receipt"></i>
+                                            Debitoor
+                                        </a>
+                                    </li>
+                                    <li data-id="4789050059">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.ContentSlider">
+                                            <i class="fa-fw far fa-images"></i>
+                                            Content Slider
+                                        </a>
+                                    </li>
+                                    <li data-id="8252036720">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.MegaMenu">
+                                            <i class="fa-fw far fa-list-alt"></i>
+                                            Mega Menu
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="plugins-manage">
+                                        <a class="dropdown-item" href="/backend/Admin/Plugin/List">
+                                            <i class="fa-fw fa fa-puzzle-piece"></i>
+                                            Manage plugins
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+
+                    <div class="collapse navbar-collapse ml-auto">
+                        <ul class="navbar-nav ml-auto">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle navbar-tool" href="javascript:void(0)"
+                                    title="Actions" data-toggle="dropdown">
+                                    <i class="icm icm-cog navbar-icon"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="http://demo.smartstore.com/backend/"
+                                        title="Public store - SmartStore.NET Demo Shop">
+                                        <i class="fa fa-fw fa-globe"></i>
+                                        SmartStore.NET Demo Shop
+                                    </a>
+                                    <a class="dropdown-item" href="http://demo.smartstore.com/backend/"
+                                        title="Public store - SmartStore.NET Demo-Shop 2">
+                                        <i class="fa fa-fw fa-globe"></i>
+                                        SmartStore.NET Demo-Shop 2
+                                    </a>
+                                    <a class="dropdown-item" href="/backend/Admin/Theme/Preview">
+                                        <i class="far fa-fw fa-eye"></i>
+                                        Preview Mode
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item"
+                                        href="/backend/Admin/Common/ClearCache?previousUrl=%2Fbackend%2FAdmin">
+                                        <i class="far fa-fw fa-trash-alt"></i>
+                                        Clear cache
+                                    </a>
+                                    <a class="dropdown-item"
+                                        href="/backend/Admin/Common/ClearDatabaseCache?previousUrl=%2Fbackend%2FAdmin">
+                                        <i class="fa fa-fw"></i>
+                                        Clear database cache
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" id="restart-application" href="#"
+                                        data-url="/backend/Admin/Common/RestartApplication?previousUrl=%2Fbackend%2FAdmin">
+                                        <i class="fa fa-fw fa-power-off"></i>
+                                        Restart application
+                                    </a>
+                                </div>
+                            </li>
+
+                            <form action="/backend/Admin/Common/LanguageSelected" class="hide" data-ajax="true"
+                                data-ajax-complete="onLanguageChangedRequestCompleted();" id="form-languageselector"
+                                method="post"><input id="customerlanguage" name="customerlanguage" type="hidden"
+                                    value="2"></form>
+                            <li class="nav-item dropdown d-none d-md-block">
+                                <a class="nav-link dropdown-toggle navbar-tool" href="javascript:void(0)"
+                                    title="English" data-toggle="dropdown">
+                                    <i class="icm icm-earth navbar-icon"></i>
+                                    <span class="pl-2">EN</span>
+                                </a>
+                                <div id="language-selector" class="dropdown-menu dropdown-menu-right">
+                                    <a href="javascript:void(0)" data-lang-id="1" class="dropdown-item">
+                                        <img src="asset/img/flags/de.png" alt="Deutsch">
+                                        Deutsch
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="2" class="dropdown-item disabled">
+                                        <img src="asset/img/flags/us.png" alt="English">
+                                        English
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="3" class="dropdown-item">
+                                        <img src="asset/img/flags/nl.png" alt="Dutch">
+                                        Dutch
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="4" class="dropdown-item">
+                                        <img src="asset/img/flags/fr.png" alt="French">
+                                        French
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="5" class="dropdown-item">
+                                        <img src="asset/img/flags/ru.png" alt="Russian">
+                                        Russian
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="6" class="dropdown-item">
+                                        <img src="asset/img/flags/jp.png" alt="Japanese">
+                                        Japanese
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="7" class="dropdown-item">
+                                        <img src="asset/img/flags/es.png" alt="Español">
+                                        Español
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="8" class="dropdown-item">
+                                        <img src="asset/img/flags/sa.png" alt="Arabic (Saudi Arabia)">
+                                        Arabic (Saudi Arabia)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="9" class="dropdown-item">
+                                        <img src="asset/img/flags/in.png" alt="Hindi (India)">
+                                        Hindi (India)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="10" class="dropdown-item">
+                                        <img src="asset/img/flags/tr.png" alt="Turkish (Turkey)">
+                                        Turkish (Turkey)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="11" class="dropdown-item">
+                                        <img src="asset/img/flags/cn.png" alt="Chinese (Simplified, PRC)">
+                                        Chinese (Simplified, PRC)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="12" class="dropdown-item">
+                                        <img src="asset/img/flags/it.png" alt="Italian (Italy)">
+                                        Italian (Italy)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="13" class="dropdown-item">
+                                        <img src="asset/img/flags/pl.png" alt="Polish (Poland)">
+                                        Polish (Poland)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="14" class="dropdown-item">
+                                        <img src="asset/img/flags/pt.png" alt="Portuguese (Portugal)">
+                                        Portuguese (Portugal)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="15" class="dropdown-item">
+                                        <img src="asset/img/flags/gr.png" alt="Greek (Greece)">
+                                        Greek (Greece)
+                                    </a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a href="/backend/Admin/Language/List" class="dropdown-item manage-languages">
+                                        Manage languages
+                                    </a>
+                                </div>
+                            </li>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#language-selector > .dropdown-item:not(.disabled, .manage-languages)").on('click', function () {
+                                        var el = $(this);
+                                        var langId = el.data("lang-id");
+                                        $("#customerlanguage").val(langId);
+                                        $("#form-languageselector").submit();
+                                    });
+                                });
+
+                                function onLanguageChangedRequestCompleted() {
+                                    location.reload();
+                                }
+                            </script>
+
+
+                            <li id="navtool-help" class="nav-item dropdown d-none d-md-block">
+                                <a class="nav-link dropdown-toggle navbar-tool" href="javascript:void(0)" title="Help"
+                                    data-toggle="dropdown">
+                                    <i class="icm icm-bubble-question navbar-icon"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="https://docs.smartstore.com/display/SMNET32/"
+                                        data-lang="en" target="help">
+                                        <i class="fa fa-fw fa-book"></i>
+                                        Documentation
+                                    </a>
+                                    <a class="dropdown-item"
+                                        href="http://community.smartstore.com/index.php?/&amp;k=880ea6a14ea49e853634fbdc5015a024&amp;setlanguage=1&amp;cal_id=&amp;langid=1"
+                                        data-lang="en" target="help">
+                                        <i class="fa fa-fw fa-comment"></i>
+                                        Community
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/backend/Admin/Home/About">
+                                        <i class="fa fa-fw fa-info-circle"></i>
+                                        About SmartStore.NET
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown ml-md-3">
+                                <a id="current-user" class="nav-link dropdown-toggle navbar-tool" data-toggle="dropdown"
+                                    title="demo" href="account.html">
+
+                                    <i class="icm icm-user navbar-icon"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="account.html">
+                                        <i class="fa fa-fw fa-user"></i>
+                                        Account
+                                    </a>
+                                    <a class="dropdown-item" href="/backend/logout">
+                                        <i class="fal fa-fw fa-sign-out-alt"></i>
+                                        Logout?
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </nav>
+
+
+                <script type="text/javascript">
+
+                    $(function () {
+
+                        $("#restart-application").on('click', function (e) {
+                            e.preventDefault();
+                            $.throbber.show({
+                                message: "Restarting the application...",
+                                callback: function () {
+                                    setLocation($(e.target).data("url"));
+
+                                }
+                            });
+                            return false;
+                        });
+
+                        // add mainmenu tooltips;
+                        $('#tools [rel=tooltip]').tooltip({
+                            placement: 'bottom'
+                        });
+
+                    });
+
+                </script>
+
+
+                <div id="breadcrumb">
+                    <!-- SiteMapPath here-->
+
+                </div>
+            </header>
+            <div id="content">
+                <div class="cph">
+
+
+                    <form action="/backend/Admin/Product/Create" id="product-form" method="post">
+                        <div class="section-header">
+                            <div class="title">
+                                Add a new product
+                                <a href='products.html'>(back to product list)</a>
+                            </div>
+                            <div class="options">
+                                <button type="submit" name="save" value="save"
+                                    class="btn btn-primary entity-commit-trigger" data-commit-type="product"
+                                    data-commit-action="insert" data-commit-id="0">
+                                    <i class="fa fa-check"></i>
+                                    <span>Save</span>
+                                </button>
+                                <button type="submit" name="save" value="save-continue"
+                                    class="btn btn-secondary entity-commit-trigger" data-commit-type="product"
+                                    data-commit-action="insert" data-commit-id="0">
+                                    <span>Save and Continue Edit</span>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="validation-summary-valid" data-valmsg-summary="true">
+                            <ul>
+                                <li style="display:none"></li>
+                            </ul>
+                        </div>
+                        <input data-val="true" data-val-number="The field &#39;ID&#39; must be a number."
+                            data-val-required="&#39;ID&#39; must not be empty." id="Id" name="Id" type="hidden"
+                            value="0" />
+
+                        <script>
+                            function productEditTab_onAjaxSuccess(tab, pane) {
+                                applyCommonPlugins(pane);
+                            }
+                        </script>
+
+                        <div data-product-id="0" id="product-edit" class="tabbable tabs-left tabs-autoselect row"
+                            data-tabselector-href="/backend/Admin/Common/SetSelectedTab"
+                            data-ajax-onsuccess="productEditTab_onAjaxSuccess">
+                            <aside class="col-lg-auto nav-aside">
+                                <ul class="nav nav-tabs nav-tabs-line flex-row flex-lg-column">
+                                    <li class="nav-item"><a href="#product-edit-1" data-toggle="tab" data-loaded="true"
+                                            class="nav-link active" data-tab-name="Info"><i
+                                                class="fa fa-pencil-alt fa-lg fa-fw"></i><span
+                                                class="tab-caption">Product Info</span></a></li>
+
+
+
+                                    <li class="nav-item"><a href="#product-edit-2" data-toggle="tab" class="nav-link"
+                                            data-tab-name="Pictures"><i class="far fa-image fa-lg fa-fw"></i><span
+                                                class="tab-caption">Pictures</span></a></li>
+
+                                    <li class="nav-item"><a href="#product-edit-3" data-toggle="tab" class="nav-link"
+                                            data-tab-name="Attributes"><i class="far fa-list-alt fa-lg fa-fw"></i><span
+                                                class="tab-caption">Attributes</span></a></li>
+
+                                </ul>
+                            </aside>
+                            <div class="col-lg nav-content">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" role="tabpanel" id="product-edit-1">
+
+                                        <script>
+                                            $(function () {
+                                                $("#ProductTypeId").change(toggleProductType);
+                                                toggleProductType();
+
+                                                // reset required-productids
+                                                $("#reset-required-productids").on("click", function (e) {
+                                                    e.preventDefault();
+                                                    $("#RequiredProductIds").val("");
+                                                });
+                                            });
+
+                                            function toggleProductType() {
+                                                var selectedProductTypeId = $("#ProductTypeId").val();
+                                                if (selectedProductTypeId == '5') {
+                                                    $('#group-required-other-products').show();
+                                                    $('#group-shipping').show();
+                                                }
+                                                else if (selectedProductTypeId == '10') {
+                                                    $('#group-required-other-products').hide();
+                                                    $('#group-downloads').hide();
+                                                    $('#group-recurring').hide();
+                                                    $('#group-shipping').hide();
+                                                }
+                                                else if (selectedProductTypeId == '15') {
+                                                    //$('a[href="#tab-inventory"]').parent().addClass("hide"); // specified in _CreateOrUpdate.cshtml
+                                                }
+                                            }
+                                        </script>
+
+                                        <div>
+                                            <table class="adminContent">
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="ProductTypeId">Product
+                                                                type</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Choose your product type."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <select data-val="true"
+                                                            data-val-number="The field &#39;Product type&#39; must be a number."
+                                                            data-val-required="&#39;Product type&#39; must not be empty."
+                                                            id="ProductTypeId" name="ProductTypeId">
+                                                            <option value="5">Simple product</option>
+                                                            <option value="10">Grouped product</option>
+                                                            <option value="15">Bundled product</option>
+                                                        </select>
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="ProductTypeId"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="VisibleIndividually">Visible
+                                                                individually</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Check the box it if you want this product to be visible in catalog or search results. You can use this field (just uncheck) to hide associated products from catalog and make them accessible only from a parent &quot;grouped&quot; product details page."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+
+
+                                                        <input checked="checked" class="check-box form-check-input"
+                                                            data-val="true"
+                                                            data-val-required="&#39;Visible individually&#39; must not be empty."
+                                                            id="VisibleIndividually" name="VisibleIndividually"
+                                                            type="checkbox" value="true" /><input
+                                                            name="VisibleIndividually" type="hidden" value="false" />
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="VisibleIndividually"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr hidden class='hide hidden-xs-up d-none'>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="ProductTemplateId">Product
+                                                                template</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Choose a product template. This template defines how this product will be displayed in public store."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <select data-val="true"
+                                                            data-val-number="The field &#39;Product template&#39; must be a number."
+                                                            data-val-required="&#39;Product template&#39; must not be empty."
+                                                            id="ProductTemplateId" name="ProductTemplateId">
+                                                            <option value="3">Default Product Template</option>
+                                                        </select>
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="ProductTemplateId"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                            <p></p>
+
+                                            <div class='locale-editor'>
+                                                <div class="nav-locales tabbable" id="product-info-localized">
+                                                    <ul class="nav nav-tabs">
+                                                        <li class="nav-item"><a href="#product-info-localized-1"
+                                                                data-toggle="tab" data-loaded="true"
+                                                                class="nav-link active"><span
+                                                                    class="tab-caption">Standard</span></a></li>
+
+                                                        <li class="nav-item"><a href="#product-info-localized-3"
+                                                                data-toggle="tab" data-loaded="true" class="nav-link"
+                                                                title="English"><img src="asset/img/flags/us.png"
+                                                                    alt="Icon" /><span
+                                                                    class="tab-caption">English</span></a></li>
+
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div class="locale-editor-content tab-pane fade show active"
+                                                            data-lang="de-DE" data-rtl="false" role="tabpanel"
+                                                            id="product-info-localized-1">
+                                                            <table class="adminContent">
+                                                                <tr>
+                                                                    <td class="adminTitle">
+                                                                        <div class='ctl-label'><label for="Name">Product
+                                                                                name</label><a class="hint" href="#"
+                                                                                onclick="return false;" tabindex="-1"
+                                                                                title="The name of the product."><i
+                                                                                    class="fa fa-question-circle"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="adminData">
+                                                                        <input data-val="true"
+                                                                            data-val-required="&#39;Product name&#39; should not be empty."
+                                                                            id="Name" name="Name" type="text"
+                                                                            value="" />
+                                                                        <span class="field-validation-valid"
+                                                                            data-valmsg-for="Name"
+                                                                            data-valmsg-replace="true"></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="adminTitle">
+                                                                        <div class='ctl-label'><label
+                                                                                for="ShortDescription">
+                                                                                description</label><a class="hint"
+                                                                                href="#" onclick="return false;"
+                                                                                tabindex="-1"
+                                                                                title="The short description of the product. This is the text that displays in product lists i.e. category / manufacturer pages"><i
+                                                                                    class="fa fa-question-circle"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="adminData">
+                                                                        <textarea cols="20" id="ShortDescription"
+                                                                            name="ShortDescription" rows="2"></textarea>
+                                                                        <span class="field-validation-valid"
+                                                                            data-valmsg-for="ShortDescription"
+                                                                            data-valmsg-replace="true"></span>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+
+
+                                                        </div>
+
+                                                        <div class="locale-editor-content tab-pane fade"
+                                                            data-lang="en-US" data-rtl="false" role="tabpanel"
+                                                            id="product-info-localized-3">
+                                                            <table class="adminContent">
+                                                                <tr>
+                                                                    <td class="adminTitle">
+                                                                        <div class='ctl-label'><label
+                                                                                for="Locales_1__Name">Product
+                                                                                name</label><a class="hint" href="#"
+                                                                                onclick="return false;" tabindex="-1"
+                                                                                title="The name of the product."><i
+                                                                                    class="fa fa-question-circle"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="adminData">
+
+                                                                        <input data-val="true"
+                                                                            data-val-number="The field &#39;LanguageId&#39; must be a number."
+                                                                            id="Locales_1__LanguageId"
+                                                                            name="Locales[1].LanguageId" type="hidden"
+                                                                            value="2" />
+
+                                                                        <input id="Locales_1__Name"
+                                                                            name="Locales[1].Name" type="text"
+                                                                            value="" />
+                                                                        <span class="field-validation-valid"
+                                                                            data-valmsg-for="Locales[1].Name"
+                                                                            data-valmsg-replace="true"></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="adminTitle">
+                                                                        <div class='ctl-label'><label
+                                                                                for="Locales_1__ShortDescription">
+                                                                                description</label><a class="hint"
+                                                                                href="#" onclick="return false;"
+                                                                                tabindex="-1"
+                                                                                title="The short description of the product. This is the text that displays in product lists i.e. category / manufacturer pages"><i
+                                                                                    class="fa fa-question-circle"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="adminData">
+                                                                        <textarea cols="20"
+                                                                            id="Locales_1__ShortDescription"
+                                                                            name="Locales[1].ShortDescription" rows="2">
+</textarea>
+                                                                        <span class="field-validation-valid"
+                                                                            data-valmsg-for="Locales[1].ShortDescription"
+                                                                            data-valmsg-replace="true"></span>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+
+
+                                                        </div>
+
+                                                    </div><input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-1' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-2' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-3' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-4' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-5' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-6' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-7' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-8' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-9' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-10' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-11' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-12' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-13' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-14' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-15' />
+                                                    <input type='hidden' class='loaded-tab-name' name='LoadedTabs'
+                                                        value='#product-info-localized-16' />
+
+                                                </div>
+                                            </div>
+
+                                            <table class="adminContent">
+
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="ImmediateQuantity">Immediate
+                                                                Quantity</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="The manufacturer&#39;s part number for this product variant."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <input class="text-box single-line" id="ImmediateQuantity"
+                                                            name="ManufacturerPartNumber" type="text" value="" />
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="ImmediateQuantity"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="Gtin">GTIN (global trade item
+                                                                number)</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Enter global trade item number (GTIN). These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books)."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <input class="text-box single-line" id="Gtin" name="Gtin"
+                                                            type="text" value="" />
+                                                        <span class="field-validation-valid" data-valmsg-for="Gtin"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="CustomsTariffNumber">Customs
+                                                                Tariff Number</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Specifies the customs tariff number of the product."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <input class="text-box single-line" id="CustomsTariffNumber"
+                                                            name="CustomsTariffNumber" type="text" value="" />
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="CustomsTariffNumber"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="CountryOfOriginId">Country of
+                                                                Origin</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Specifies the country of origin of the product."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <select data-val="true"
+                                                            data-val-number="The field &#39;Country of Origin&#39; must be a number."
+                                                            id="CountryOfOriginId" name="CountryOfOriginId">
+                                                            <option value="">Unspecified</option>
+                                                            <option value="1">Deutschland</option>
+                                                            <option value="2">&#214;sterreich</option>
+                                                            <option value="3">Schweiz</option>
+                                                            <option value="86">Afghanistan</option>
+                                                            <option value="33">&#196;gypten</option>
+                                                            <option value="87">Albanien</option>
+                                                            <option value="88">Algerien</option>
+                                                            <option value="90">Andorra</option>
+                                                            <option value="91">Angola</option>
+                                                            <option value="92">Anguilla</option>
+                                                            <option value="93">Antarktis</option>
+                                                            <option value="94">Antigua und Barbuda</option>
+                                                            <option value="119">&#196;quatorial Guinea</option>
+                                                            <option value="6">Argentinien</option>
+                                                            <option value="7">Armenien</option>
+                                                            <option value="8">Aruba</option>
+                                                            <option value="10">Aserbaidschan</option>
+                                                            <option value="122">&#196;thiopien</option>
+                                                            <option value="9">Australien</option>
+                                                            <option value="11">Bahamas</option>
+                                                            <option value="95">Bahrain</option>
+                                                            <option value="12">Bangladesh</option>
+                                                            <option value="96">Barbados</option>
+                                                            <option value="14">Belgien</option>
+                                                            <option value="15">Belize</option>
+                                                            <option value="97">Benin</option>
+                                                            <option value="16">Bermudas</option>
+                                                            <option value="98">Bhutan</option>
+                                                            <option value="178">Birma</option>
+                                                            <option value="17">Bolivien</option>
+                                                            <option value="18">Bosnien-Herzegowina</option>
+                                                            <option value="99">Botswana</option>
+                                                            <option value="100">Bouvet Inseln</option>
+                                                            <option value="19">Brasilien</option>
+                                                            <option value="101">Britisch-Indischer Ozean</option>
+                                                            <option value="102">Brunei</option>
+                                                            <option value="20">Bulgarien</option>
+                                                            <option value="103">Burkina Faso</option>
+                                                            <option value="104">Burundi</option>
+                                                            <option value="22">Chile</option>
+                                                            <option value="23">China</option>
+                                                            <option value="110">Christmas Island</option>
+                                                            <option value="114">Cook Inseln</option>
+                                                            <option value="25">Costa Rica</option>
+                                                            <option value="30">D&#228;nemark</option>
+                                                            <option value="116">Djibuti</option>
+                                                            <option value="117">Dominika</option>
+                                                            <option value="31">Dominikanische Republik</option>
+                                                            <option value="32">Ecuador</option>
+                                                            <option value="118">El Salvador</option>
+                                                            <option value="115">Elfenbeink&#252;ste</option>
+                                                            <option value="120">Eritrea</option>
+                                                            <option value="121">Estland</option>
+                                                            <option value="123">Falkland Inseln</option>
+                                                            <option value="124">F&#228;r&#246;er Inseln</option>
+                                                            <option value="125">Fidschi</option>
+                                                            <option value="34">Finnland</option>
+                                                            <option value="35">Frankreich</option>
+                                                            <option value="126">Franz&#246;sisch Guyana</option>
+                                                            <option value="127">Franz&#246;sisch Polynesien</option>
+                                                            <option value="128">Franz&#246;sisches S&#252;d-Territorium
+                                                            </option>
+                                                            <option value="129">Gabun</option>
+                                                            <option value="130">Gambia</option>
+                                                            <option value="36">Georgien</option>
+                                                            <option value="131">Ghana</option>
+                                                            <option value="37">Gibraltar</option>
+                                                            <option value="133">Grenada</option>
+                                                            <option value="38">Griechenland</option>
+                                                            <option value="132">Gr&#246;nland</option>
+                                                            <option value="80">Gro&#223;britannien</option>
+                                                            <option value="134">Guadeloupe</option>
+                                                            <option value="135">Guam</option>
+                                                            <option value="39">Guatemala</option>
+                                                            <option value="136">Guinea</option>
+                                                            <option value="137">Guinea Bissau</option>
+                                                            <option value="138">Guyana</option>
+                                                            <option value="139">Haiti</option>
+                                                            <option value="140">Heard und McDonald Islands</option>
+                                                            <option value="141">Honduras</option>
+                                                            <option value="40">Hong Kong</option>
+                                                            <option value="42">Indien</option>
+                                                            <option value="43">Indonesien</option>
+                                                            <option value="144">Irak</option>
+                                                            <option value="143">Iran</option>
+                                                            <option value="44">Irland</option>
+                                                            <option value="142">Island</option>
+                                                            <option value="45">Israel</option>
+                                                            <option value="46">Italien</option>
+                                                            <option value="47">Jamaika</option>
+                                                            <option value="48">Japan</option>
+                                                            <option value="235">Jemen</option>
+                                                            <option value="49">Jordanien</option>
+                                                            <option value="21">Kaiman Inseln</option>
+                                                            <option value="105">Kambodscha</option>
+                                                            <option value="106">Kamerun</option>
+                                                            <option value="5">Kanada</option>
+                                                            <option value="107">Kap Verde</option>
+                                                            <option value="50">Kasachstan</option>
+                                                            <option value="145">Kenia</option>
+                                                            <option value="148">Kirgisistan</option>
+                                                            <option value="146">Kiribati</option>
+                                                            <option value="111">Kokosinseln</option>
+                                                            <option value="24">Kolumbien</option>
+                                                            <option value="112">Komoren</option>
+                                                            <option value="113">Kongo</option>
+                                                            <option value="26">Kroatien</option>
+                                                            <option value="27">Kuba</option>
+                                                            <option value="52">Kuwait</option>
+                                                            <option value="149">Laos</option>
+                                                            <option value="152">Lesotho</option>
+                                                            <option value="150">Lettland</option>
+                                                            <option value="151">Libanon</option>
+                                                            <option value="153">Liberia</option>
+                                                            <option value="154">Libyen</option>
+                                                            <option value="155">Liechtenstein</option>
+                                                            <option value="156">Litauen</option>
+                                                            <option value="157">Luxemburg</option>
+                                                            <option value="158">Macao</option>
+                                                            <option value="160">Madagaskar</option>
+                                                            <option value="161">Malawi</option>
+                                                            <option value="53">Malaysia</option>
+                                                            <option value="162">Malediven</option>
+                                                            <option value="163">Mali</option>
+                                                            <option value="164">Malta</option>
+                                                            <option value="189">Marianen</option>
+                                                            <option value="176">Marokko</option>
+                                                            <option value="165">Marshall Inseln</option>
+                                                            <option value="166">Martinique</option>
+                                                            <option value="167">Mauretanien</option>
+                                                            <option value="168">Mauritius</option>
+                                                            <option value="169">Mayotte</option>
+                                                            <option value="159">Mazedonien</option>
+                                                            <option value="54">Mexiko</option>
+                                                            <option value="170">Mikronesien</option>
+                                                            <option value="177">Mocambique</option>
+                                                            <option value="171">Moldavien</option>
+                                                            <option value="172">Monaco</option>
+                                                            <option value="173">Mongolei</option>
+                                                            <option value="174">Montenegro</option>
+                                                            <option value="175">Montserrat</option>
+                                                            <option value="179">Namibia</option>
+                                                            <option value="180">Nauru</option>
+                                                            <option value="181">Nepal</option>
+                                                            <option value="183">Neukaledonien</option>
+                                                            <option value="56">Neuseeland</option>
+                                                            <option value="184">Nicaragua</option>
+                                                            <option value="55">Niederlande</option>
+                                                            <option value="182">Niederl&#228;ndische Antillen</option>
+                                                            <option value="185">Niger</option>
+                                                            <option value="186">Nigeria</option>
+                                                            <option value="187">Niue</option>
+                                                            <option value="51">Nord Korea</option>
+                                                            <option value="188">Norfolk Inseln</option>
+                                                            <option value="57">Norwegen</option>
+                                                            <option value="190">Oman</option>
+                                                            <option value="58">Pakistan</option>
+                                                            <option value="191">Palau</option>
+                                                            <option value="192">Panama</option>
+                                                            <option value="193">Papua Neuguinea</option>
+                                                            <option value="59">Paraguay</option>
+                                                            <option value="60">Peru</option>
+                                                            <option value="61">Philippinen</option>
+                                                            <option value="194">Pitcairn</option>
+                                                            <option value="62">Polen</option>
+                                                            <option value="63">Portugal</option>
+                                                            <option value="64">Puerto Rico</option>
+                                                            <option value="65">Qatar</option>
+                                                            <option value="195">Reunion</option>
+                                                            <option value="196">Ruanda</option>
+                                                            <option value="66">Rum&#228;nien</option>
+                                                            <option value="67">Ru&#223;land</option>
+                                                            <option value="198">Saint Lucia</option>
+                                                            <option value="236">Sambia</option>
+                                                            <option value="200">Samoa</option>
+                                                            <option value="89">Samoa</option>
+                                                            <option value="201">San Marino</option>
+                                                            <option value="202">Sao Tome</option>
+                                                            <option value="68">Saudi Arabien</option>
+                                                            <option value="74">Schweden</option>
+                                                            <option value="203">Senegal</option>
+                                                            <option value="85">Serbien</option>
+                                                            <option value="204">Seychellen</option>
+                                                            <option value="205">Sierra Leone</option>
+                                                            <option value="69">Singapur</option>
+                                                            <option value="70">Slowakei</option>
+                                                            <option value="71">Slowenien</option>
+                                                            <option value="206">Solomon Inseln</option>
+                                                            <option value="207">Somalia</option>
+                                                            <option value="208">South Georgia, South Sandwich Isl.
+                                                            </option>
+                                                            <option value="73">Spanien</option>
+                                                            <option value="209">Sri Lanka</option>
+                                                            <option value="210">St. Helena</option>
+                                                            <option value="197">St. Kitts Nevis Anguilla</option>
+                                                            <option value="211">St. Pierre und Miquelon</option>
+                                                            <option value="199">St. Vincent</option>
+                                                            <option value="147">S&#252;d Korea</option>
+                                                            <option value="72">S&#252;dafrika</option>
+                                                            <option value="212">Sudan</option>
+                                                            <option value="213">Surinam</option>
+                                                            <option value="214">Svalbard und Jan Mayen Islands</option>
+                                                            <option value="215">Swasiland</option>
+                                                            <option value="216">Syrien</option>
+                                                            <option value="217">Tadschikistan</option>
+                                                            <option value="75">Taiwan</option>
+                                                            <option value="218">Tansania</option>
+                                                            <option value="76">Thailand</option>
+                                                            <option value="219">Togo</option>
+                                                            <option value="220">Tokelau</option>
+                                                            <option value="221">Tonga</option>
+                                                            <option value="222">Trinidad Tobago</option>
+                                                            <option value="109">Tschad</option>
+                                                            <option value="29">Tschechische Republik</option>
+                                                            <option value="223">Tunesien</option>
+                                                            <option value="77">T&#252;rkei</option>
+                                                            <option value="224">Turkmenistan</option>
+                                                            <option value="225">Turks und Kaikos Inseln</option>
+                                                            <option value="226">Tuvalu</option>
+                                                            <option value="227">Uganda</option>
+                                                            <option value="78">Ukraine</option>
+                                                            <option value="41">Ungarn</option>
+                                                            <option value="81">United States Minor Outlying Islands
+                                                            </option>
+                                                            <option value="82">Uruguay</option>
+                                                            <option value="83">Usbekistan</option>
+                                                            <option value="228">Vanuatu</option>
+                                                            <option value="229">Vatikan</option>
+                                                            <option value="84">Venezuela</option>
+                                                            <option value="79">Vereinigte Arabische Emirate</option>
+                                                            <option value="4">Vereinigte Staaten von Amerika</option>
+                                                            <option value="230">Vietnam</option>
+                                                            <option value="231">Virgin Island (Brit.)</option>
+                                                            <option value="232">Virgin Island (USA)</option>
+                                                            <option value="233">Wallis et Futuna</option>
+                                                            <option value="13">Weissrussland</option>
+                                                            <option value="234">Westsahara</option>
+                                                            <option value="108">Zentralafrikanische Republik</option>
+                                                            <option value="237">Zimbabwe</option>
+                                                            <option value="28">Zypern</option>
+                                                        </select>
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="CountryOfOriginId"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="ShowOnHomePage">Show on home
+                                                                page</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Check the box to display this product on your store&#39;s home page. Recommended for your most popular products."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <input data-toggler-for="#pnlHomePageDisplayOrder"
+                                                            data-val="true"
+                                                            data-val-required="&#39;Show on home page&#39; must not be empty."
+                                                            id="ShowOnHomePage" name="ShowOnHomePage" type="checkbox"
+                                                            value="true" /><input name="ShowOnHomePage" type="hidden"
+                                                            value="false" />
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="ShowOnHomePage"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr id="pnlHomePageDisplayOrder">
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="HomePageDisplayOrder">Display
+                                                                order</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Specifies display order. 1 represents the top of the list."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+
+
+                                                        <div class="numerictextbox-group flex-grow-1">
+                                                            <div class="t-widget t-numerictextbox"><input
+                                                                    class="t-input" data-val="true"
+                                                                    data-val-number="The field &#39;Display order&#39; must be a number."
+                                                                    data-val-required="&#39;Display order&#39; must not be empty."
+                                                                    id="HomePageDisplayOrder"
+                                                                    name="HomePageDisplayOrder" type="text"
+                                                                    value="0" /><a class="t-link t-icon t-arrow-up"
+                                                                    href="#" tabindex="-1"
+                                                                    title="Increase value">Increment</a><a
+                                                                    class="t-link t-icon t-arrow-down" href="#"
+                                                                    tabindex="-1" title="Decrease value">Decrement</a>
+                                                            </div>
+
+                                                        </div>
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="HomePageDisplayOrder"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label
+                                                                for="Published">Published</label><a class="hint"
+                                                                href="#" onclick="return false;" tabindex="-1"
+                                                                title="Check the box to publish this product (visible in store). Uncheck to unpublish (product not available in store)."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+
+
+                                                        <input checked="checked" class="check-box form-check-input"
+                                                            data-val="true"
+                                                            data-val-required="&#39;Published&#39; must not be empty."
+                                                            id="Published" name="Published" type="checkbox"
+                                                            value="true" /><input name="Published" type="hidden"
+                                                            value="false" />
+                                                        <span class="field-validation-valid" data-valmsg-for="Published"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+
+                                            <table class="adminContent" id="group-shipping">
+                                                <tr class="adminSeparator">
+                                                    <td colspan="2">
+                                                        <hr />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="adminTitle">
+                                                        <div class='ctl-label'><label for="IsShipEnabled">Shipping
+                                                                enabled</label><a class="hint" href="#"
+                                                                onclick="return false;" tabindex="-1"
+                                                                title="Determines whether the product can be shipped."><i
+                                                                    class="fa fa-question-circle"></i></a></div>
+                                                    </td>
+                                                    <td class="adminData">
+                                                        <input checked="checked" data-toggler-for="#pnlIsShipEnabled"
+                                                            data-val="true"
+                                                            data-val-required="&#39;Shipping enabled&#39; must not be empty."
+                                                            id="IsShipEnabled" name="IsShipEnabled" type="checkbox"
+                                                            value="true" /><input name="IsShipEnabled" type="hidden"
+                                                            value="false" />
+                                                        <span class="field-validation-valid"
+                                                            data-valmsg-for="IsShipEnabled"
+                                                            data-valmsg-replace="true"></span>
+                                                    </td>
+                                                </tr>
+                                                <tbody id="pnlIsShipEnabled">
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label for="DeliveryTimeId">Delivery
+                                                                    time</label><a class="hint" href="#"
+                                                                    onclick="return false;" tabindex="-1"
+                                                                    title="The amount of time it takes to prepare the order for shipping."><i
+                                                                        class="fa fa-question-circle"></i></a></div>
+                                                        </td>
+                                                        <td class="adminData">
+                                                            <select data-val="true"
+                                                                data-val-number="The field &#39;Delivery time&#39; must be a number."
+                                                                id="DeliveryTimeId" name="DeliveryTimeId">
+                                                                <option value="">Unspecified</option>
+                                                                <option value="1">sofort lieferbar</option>
+                                                                <option value="2">2-5 Werktage</option>
+                                                                <option value="3">7 Werktage</option>
+                                                                <option value="4">sofort lieferbar</option>
+                                                                <option value="5">3 - 4 Wochen</option>
+                                                                <option value="6">4 - 6 Wochen</option>
+                                                            </select>
+                                                            <span class="field-validation-valid"
+                                                                data-valmsg-for="DeliveryTimeId"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label for="IsFreeShipping">Free
+                                                                    shipping</label><a class="hint" href="#"
+                                                                    onclick="return false;" tabindex="-1"
+                                                                    title="Check the box if this product comes with FREE shipping."><i
+                                                                        class="fa fa-question-circle"></i></a></div>
+                                                        </td>
+                                                        <td class="adminData">
+
+
+                                                            <input class="check-box form-check-input" data-val="true"
+                                                                data-val-required="&#39;Free shipping&#39; must not be empty."
+                                                                id="IsFreeShipping" name="IsFreeShipping"
+                                                                type="checkbox" value="true" /><input
+                                                                name="IsFreeShipping" type="hidden" value="false" />
+                                                            <span class="field-validation-valid"
+                                                                data-valmsg-for="IsFreeShipping"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label
+                                                                    for="AdditionalShippingCharge">Additional shipping
+                                                                    charge</label><a class="hint" href="#"
+                                                                    onclick="return false;" tabindex="-1"
+                                                                    title="The additional shipping charge."><i
+                                                                        class="fa fa-question-circle"></i></a></div>
+                                                        </td>
+                                                        <td class="adminData">
+
+
+                                                            <div class="numerictextbox-group flex-grow-1">
+                                                                <div class="t-widget t-numerictextbox"><input
+                                                                        class="t-input" data-val="true"
+                                                                        data-val-number="The field &#39;Additional shipping charge&#39; must be a number."
+                                                                        data-val-required="&#39;Additional shipping charge&#39; must not be empty."
+                                                                        id="AdditionalShippingCharge"
+                                                                        name="AdditionalShippingCharge" type="text"
+                                                                        value="0" /><a class="t-link t-icon t-arrow-up"
+                                                                        href="#" tabindex="-1"
+                                                                        title="Increase value">Increment</a><a
+                                                                        class="t-link t-icon t-arrow-down" href="#"
+                                                                        tabindex="-1"
+                                                                        title="Decrease value">Decrement</a></div>
+
+                                                                <span class="numerictextbox-postfix">EUR</span>
+                                                            </div>
+
+
+
+                                                            <span class="field-validation-valid"
+                                                                data-valmsg-for="AdditionalShippingCharge"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label for="QuantityUnitId">Quantity
+                                                                    unit</label></div>
+                                                        </td>
+                                                        <td class="adminData">
+                                                            <select data-val="true"
+                                                                data-val-number="The field &#39;Quantity unit&#39; must be a number."
+                                                                id="QuantityUnitId" name="QuantityUnitId">
+                                                                <option value="">Unspecified</option>
+                                                                <option value="1">Stk</option>
+                                                                <option value="2">St&#252;ck</option>
+                                                                <option value="3">Paket</option>
+                                                                <option value="4">Schachtel</option>
+                                                                <option value="5">Palette</option>
+                                                                <option value="6">Kiste</option>
+                                                                <option value="7">Einheit</option>
+                                                                <option value="8">Sack</option>
+                                                                <option value="9">T&#252;te</option>
+                                                                <option value="10">Dose</option>
+                                                                <option value="11">P&#228;ckchen</option>
+                                                                <option value="12">Stange</option>
+                                                                <option value="13">Flasche</option>
+                                                                <option value="14">Glas</option>
+                                                                <option value="15">Bund</option>
+                                                                <option value="16">Rolle</option>
+                                                                <option value="17">Becher</option>
+                                                                <option value="18">B&#252;ndel</option>
+                                                                <option value="19">Kanister</option>
+                                                                <option value="20">Fass</option>
+                                                                <option value="21">Set</option>
+                                                                <option value="22">Eimer</option>
+                                                                <option value="23">Pack</option>
+                                                            </select>
+                                                            <span class="field-validation-valid"
+                                                                data-valmsg-for="QuantityUnitId"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label for="Weight">Weight</label><a
+                                                                    class="hint" href="#" onclick="return false;"
+                                                                    tabindex="-1"
+                                                                    title="The weight of the product. Can be used in shipping calculations."><i
+                                                                        class="fa fa-question-circle"></i></a></div>
+                                                        </td>
+                                                        <td class="adminData">
+
+
+                                                            <div class="numerictextbox-group flex-grow-1">
+                                                                <div class="t-widget t-numerictextbox"><input
+                                                                        class="t-input" data-val="true"
+                                                                        data-val-number="The field &#39;Weight&#39; must be a number."
+                                                                        data-val-required="&#39;Weight&#39; must not be empty."
+                                                                        id="Weight" name="Weight" type="text"
+                                                                        value="0" /><a class="t-link t-icon t-arrow-up"
+                                                                        href="#" tabindex="-1"
+                                                                        title="Increase value">Increment</a><a
+                                                                        class="t-link t-icon t-arrow-down" href="#"
+                                                                        tabindex="-1"
+                                                                        title="Decrease value">Decrement</a></div>
+
+                                                                <span class="numerictextbox-postfix">Kilogramm</span>
+                                                            </div>
+
+
+
+                                                            <span class="field-validation-valid"
+                                                                data-valmsg-for="Weight"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label for="Length">Length</label><a
+                                                                    class="hint" href="#" onclick="return false;"
+                                                                    tabindex="-1" title="The length of the product."><i
+                                                                        class="fa fa-question-circle"></i></a></div>
+                                                        </td>
+                                                        <td class="adminData">
+
+
+                                                            <div class="numerictextbox-group flex-grow-1">
+                                                                <div class="t-widget t-numerictextbox"><input
+                                                                        class="t-input" data-val="true"
+                                                                        data-val-number="The field &#39;Length&#39; must be a number."
+                                                                        data-val-required="&#39;Length&#39; must not be empty."
+                                                                        id="Length" name="Length" type="text"
+                                                                        value="0" /><a class="t-link t-icon t-arrow-up"
+                                                                        href="#" tabindex="-1"
+                                                                        title="Increase value">Increment</a><a
+                                                                        class="t-link t-icon t-arrow-down" href="#"
+                                                                        tabindex="-1"
+                                                                        title="Decrease value">Decrement</a></div>
+
+                                                                <span class="numerictextbox-postfix">Meter</span>
+                                                            </div>
+
+
+
+                                                            <span class="field-validation-valid"
+                                                                data-valmsg-for="Length"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label for="Width">Width</label><a
+                                                                    class="hint" href="#" onclick="return false;"
+                                                                    tabindex="-1" title="The width of the product."><i
+                                                                        class="fa fa-question-circle"></i></a></div>
+                                                        </td>
+                                                        <td class="adminData">
+
+
+                                                            <div class="numerictextbox-group flex-grow-1">
+                                                                <div class="t-widget t-numerictextbox"><input
+                                                                        class="t-input" data-val="true"
+                                                                        data-val-number="The field &#39;Width&#39; must be a number."
+                                                                        data-val-required="&#39;Width&#39; must not be empty."
+                                                                        id="Width" name="Width" type="text"
+                                                                        value="0" /><a class="t-link t-icon t-arrow-up"
+                                                                        href="#" tabindex="-1"
+                                                                        title="Increase value">Increment</a><a
+                                                                        class="t-link t-icon t-arrow-down" href="#"
+                                                                        tabindex="-1"
+                                                                        title="Decrease value">Decrement</a></div>
+
+                                                                <span class="numerictextbox-postfix">Meter</span>
+                                                            </div>
+
+
+
+                                                            <span class="field-validation-valid" data-valmsg-for="Width"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="adminTitle">
+                                                            <div class='ctl-label'><label for="Height">Height</label><a
+                                                                    class="hint" href="#" onclick="return false;"
+                                                                    tabindex="-1" title="The height of the product."><i
+                                                                        class="fa fa-question-circle"></i></a></div>
+                                                        </td>
+                                                        <td class="adminData">
+
+
+                                                            <div class="numerictextbox-group flex-grow-1">
+                                                                <div class="t-widget t-numerictextbox"><input
+                                                                        class="t-input" data-val="true"
+                                                                        data-val-number="The field &#39;Height&#39; must be a number."
+                                                                        data-val-required="&#39;Height&#39; must not be empty."
+                                                                        id="Height" name="Height" type="text"
+                                                                        value="0" /><a class="t-link t-icon t-arrow-up"
+                                                                        href="#" tabindex="-1"
+                                                                        title="Increase value">Increment</a><a
+                                                                        class="t-link t-icon t-arrow-down" href="#"
+                                                                        tabindex="-1"
+                                                                        title="Decrease value">Decrement</a></div>
+
+                                                                <span class="numerictextbox-postfix">Meter</span>
+                                                            </div>
+
+
+
+                                                            <span class="field-validation-valid"
+                                                                data-valmsg-for="Height"
+                                                                data-valmsg-replace="true"></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="product-edit-2">
+
+
+
+                                        <table class="adminContent">
+                                            <tr>
+                                                <td class="adminTitle">
+                                                    <div class='ctl-label'><label for="PictureId">Picture</label><a
+                                                            class="hint" href="#" onclick="return false;" tabindex="-1"
+                                                            title="The category picture."><i
+                                                                class="fa fa-question-circle"></i></a></div>
+                                                </td>
+                                                <td class="adminData">
+                                                    <div class="fileupload-container">
+                                                        <div class="fileupload-thumb-stage">
+                                                            <div class="fileupload-thumb"
+                                                                style="background-image: url('asset/img/default-image.png?size=250')">
+                                                                <input class="hidden" data-val="true"
+                                                                    data-val-number="The field &#39;Picture&#39; must be a number."
+                                                                    id="PictureId" name="PictureId" type="hidden"
+                                                                    value="" />
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="fileupload-controls">
+
+
+                                                            <div class="fileupload" data-accept="gif|jpe?g|png"
+                                                                data-show-remove-after-upload="true"
+                                                                data-upload-url="/backend/Admin/Picture/AsyncUpload?isTransient=True&amp;validate=True"
+                                                                data-fallback-url="//demo.smartstore.com/backend/media/image/0/default-image.png?size=250"
+                                                                id="upload-509591302">
+                                                                <!-- The global progress information -->
+                                                                <div class="fileupload-progress fade">
+                                                                    <!-- The global progress bar -->
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar" role="progressbar"
+                                                                            style="width: 0%" aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+
+
+                                                                </div>
+
+                                                                <div class="fileupload-buttons">
+                                                                    <button class="btn btn-danger remove"
+                                                                        style="display: none">
+                                                                        <span>Remove</span>
+                                                                    </button>
+
+                                                                    <span class="btn btn-secondary fileinput-button">
+                                                                        <i class="fa fa-upload"></i>
+                                                                        <span>Upload a file</span>
+                                                                        <input type="file" id="upload-509591302-file"
+                                                                            name="upload-509591302-file" />
+                                                                    </span>
+
+                                                                    <button class="btn btn-outline-secondary cancel"
+                                                                        style="display: none">
+                                                                        <span>Cancel</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <script data-origin="FileUploader">
+                                                                $(function () {
+                                                                    $('#upload-509591302').fileUploadWrapper({
+                                                                        onUploading: null,
+                                                                        onUploadCompleted: onUploadCompleted_1740881630,
+                                                                        onAborted: null,
+                                                                        onError: null,
+                                                                        onFileRemove: null,
+                                                                        onCompleted: null
+                                                                    });
+                                                                });
+                                                            </script>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <script>
+                                                        window['onUploadCompleted_1740881630'] = function (e, el, data) {
+                                                            $("#add-product-picture").removeAttr('disabled');
+                                                        }
+                                                        window['onFileRemove_1740881630'] = function (e, el) {
+                                                            $("#add-product-picture").attr('disabled', 'disabled');
+                                                        }
+
+                                                    </script>
+                                                    <span class="field-validation-valid" data-valmsg-for="PictureId"
+                                                        data-valmsg-replace="true"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="product-edit-3">
+                                        Attributes
+                                    </div>
+
+
+                                </div>
+                            </div><input type='hidden' class='loaded-tab-name' name='LoadedTabs' value='Info' />
+                            <input type='hidden' class='loaded-tab-name' name='LoadedTabs' value='SEO' />
+                            <input type='hidden' class='loaded-tab-name' name='LoadedTabs' value='Downloads' />
+
+                        </div>
+
+                    </form>
+                </div>
+                <div id="ajax-busy">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="asset/js/telerik.common.min.js"></script>
+    <script src="asset/js/telerik.textbox.min.js"></script>
+    <script src="asset/js/telerik.calendar.min.js"></script>
+    <script src="asset/js/telerik.datepicker.min.js"></script>
+    <script src="asset/js/fileUpload.js"></script>
+    <script src="asset/js/linkBuilder.js"></script>
+    <script src="asset/js/modernizr-custom.js"></script>
+
+    <script src="asset/js/main.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        jQuery(document).ready(function () {
+            jQuery('#HomePageDisplayOrder').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#RecurringCycleLength').tTextBox({ val: 100, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#RecurringTotalCycles').tTextBox({ val: 10, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#AdditionalShippingCharge').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Weight').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Length').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Width').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Height').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#MaxNumberOfDownloads').tTextBox({ val: 10, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#DownloadExpirationDays').tTextBox({ val: null, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+        });
+        //]]>
+    </script>
+    <div id="add-changelog-window" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true"
+        aria-labelledby="add-changelog-windowLabel" data-keyboard="true" data-show="true" data-focus="true"
+        data-backdrop="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class='modal-title' id='add-changelog-windowLabel'>Edit changelog</h5><button type='button'
+                        class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span></button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="post">
+                        <input type="hidden" id="DownloadId" name="DownloadId" value="0" />
+                        <div>
+                            <input class="text-box single-line" id="AddChangelog" name="AddChangelog" type="text"
+                                value="" />
+                            <span class="field-validation-valid" data-valmsg-for="AddChangelog"
+                                data-valmsg-replace="true"></span>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary btn-flat" data-dismiss="modal">
+                        <span>Cancel</span>
+                    </button>
+                    <button id="add-changelog" type="submit" class="btn btn-primary" data-dismiss="modal">
+                        <i class="fa fa-check"></i>
+                        <span>Add new</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

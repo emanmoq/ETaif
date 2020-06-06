@@ -1,0 +1,1741 @@
+<!Doctype html>
+<html>
+
+<head>
+        <title>Control Panel</title>
+        <meta charset="utf-8">
+        <link rel=icon href="asset/img/logo.png" type="image/png">
+
+        <link rel="stylesheet" href="asset/css/icm.css" type="text/css">
+        <link rel="stylesheet" href="asset/css/theme.css" type="text/css">
+        <script src="asset/js/script2.js" type="text/javascript"></script>
+        <script src="asset/js/script1.js"></script>
+        <script>
+                window.Res = {
+                        "Common.Notification": "Alert",
+                        "Common.Close": "Close",
+                        "Common.On": "On",
+                        "Common.OK": "OK",
+                        "Common.Cancel": "Cancel",
+                        "Common.Off": "Off",
+                        "Products.Longdesc.More": "Show more",
+                        "Products.Longdesc.Less": "Show less",
+                        "Jquery.Validate.Email": "Please enter a valid email address.",
+                        "Jquery.Validate.Required": "This field is required.",
+                        "Jquery.Validate.Remote": "Please fix this field.",
+                        "Jquery.Validate.Url": "Please enter a valid URL.",
+                        "Jquery.Validate.Date": "Please enter a valid date.",
+                        "Jquery.Validate.DateISO": "Please enter a valid date (ISO).",
+                        "Jquery.Validate.Number": "Please enter a valid number.",
+                        "Jquery.Validate.Digits": "Please enter only digits.",
+                        "Jquery.Validate.Creditcard": "Please enter a valid credit card number.",
+                        "Jquery.Validate.Equalto": "Please enter the same value again.",
+                        "Jquery.Validate.Maxlength": "Please enter no more than {0} characters.",
+                        "Jquery.Validate.Minlength": "Please enter at least {0} characters.",
+                        "Jquery.Validate.Rangelength": "Please enter a value between {0} and {1} characters long.",
+                        "jquery.Validate.Range": "Please enter a value between {0} and {1}.",
+                        "Jquery.Validate.Max": "Please enter a value less than or equal to {0}.",
+                        "Jquery.Validate.Min": "Please enter a value greater than or equal to {0}.",
+                        "Admin.Common.AreYouSure": "Are you sure?",
+                };
+        </script>
+        <script>
+                try {
+                        if (typeof navigator === 'undefined') navigator = {};
+                        html = document.documentElement;
+                        if (/Edge\/\d+/.test(navigator.userAgent)) { html.className += ' edge' }
+                        else if ('mozMatchesSelector' in html) { html.className += ' moz' }
+                        else if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) { html.className += ' ios' }
+                        else if ('webkitMatchesSelector' in html) { html.className += ' wkit' };
+                        html.className += (this.top === this.window ? ' not-' : ' ') + 'framed';
+                } catch (e) { }
+        </script>
+        <script>var ieMode = 0; try { if (document.documentMode) { ieMode = document.documentMode; html.className += ' ie iepost8 ie' + document.documentMode } else { html.className += ' not-ie' }; } catch (e) { }; navigator.isIE = ieMode</script>
+
+
+</head>
+
+<body>
+
+        <div id="page">
+
+                <div class="page-main">
+                        <header id="header">
+                                <nav id="navbar" class="navbar navbar-dark navbar-expand">
+
+                                        <a class="navbar-brand mx-0 mr-3" href="/backend/Admin">
+
+                                                <img class="navbar-img d-none d-lg-block" src="asset/img/logo.png"
+                                                        alt="newSolutions.com">
+                                                <img class="navbar-img d-lg-none" src="asset/img/logo.png"
+                                                        alt="newSolutions.com">
+                                        </a>
+
+                                        <div id="navbar-menu" class="collapse navbar-collapse mr-auto">
+
+                                                <ul class="navbar-nav">
+                                                        <li data-id="nav-dashboard"
+                                                                class="nav-item dropdown d-none d-md-block">
+                                                                <a class="nav-link" href="index.html">
+                                                                        <i class="icm icm-icm icm-home navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">Dashboard</span>
+                                                                </a>
+                                                        </li>
+                                                        <li data-id="nav-catalog" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i class="icm icm-icm icm-cube navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">Catalog</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="categories-list">
+                                                                                <a class="dropdown-item"
+                                                                                        href="Category.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-sitemap"></i>
+                                                                                        Categories
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="products">
+                                                                                <a class="dropdown-item"
+                                                                                        href="products.html">
+                                                                                        <i class="fa-fw fa fa-cube"></i>
+                                                                                        Manage products
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="attributes">
+                                                                                <a class="dropdown-item"
+                                                                                        href="productattr.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-list-alt"></i>
+                                                                                        Product Attributes
+                                                                                </a>
+                                                                        </li>
+                                                                        <li class="dropdown-divider"></li>
+                                                                        <li data-id="attributes-header"
+                                                                                class="dropdown-header h6">Attributes
+                                                                        </li>
+                                                          
+                                                                        <li data-id="reviews">
+                                                                                <a class="dropdown-item"
+                                                                                        href="viewProducts.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-star-half"></i>
+                                                                                        Product reviews
+                                                                                </a>
+                                                                        </li>
+                                                            
+                                                          
+                                                                        <li data-id="stockreport">
+                                                                                <a class="dropdown-item"
+                                                                                        href="lowstockReport.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-sort-numeric-down"></i>
+                                                                                        Low stock report
+                                                                                </a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+                                                        <li data-id="nav-sales" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-icm icm-chart-growth navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">Sales</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="orders">
+                                                                                <a class="dropdown-item"
+                                                                                        href="order.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-chart-bar"></i>
+                                                                                        Orders
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="shipments">
+                                                                                <a class="dropdown-item"
+                                                                                        href="shipment.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-truck-moving fa-flip-horizontal"></i>
+                                                                                        Shipments
+                                                                                </a>
+                                                                        </li>
+                                                            
+                                                        
+                                                                        <li class="dropdown-divider"></li>
+
+                                                                        <li data-id="wishlists">
+                                                                                <a class="dropdown-item"
+                                                                                        href="wishList.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-heart"></i>
+                                                                                        Current wishlists
+                                                                                </a>
+                                                                        </li>
+                                                                
+                                                                </ul>
+                                                        </li>
+                                                        <li data-id="nav-users" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-icm icm-users2 navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">Customers</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="customers">
+                                                                                <a class="dropdown-item"
+                                                                                        href="customers.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-user-alt"></i>
+                                                                                        Customers
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="customer-roles">
+                                                                                <a class="dropdown-item"
+                                                                                        href="customRoles.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-users"></i>
+                                                                                        Customer roles
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="online-customers">
+                                                                                <a class="dropdown-item"
+                                                                                        href="customonline.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-sign-in-alt"></i>
+                                                                                        Online customers
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="customer-reports">
+                                                                                <a class="dropdown-item"
+                                                                                        href="customReport.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-chart-bar"></i>
+                                                                                        Customer reports
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="external-auth">
+                                                                                <a class="dropdown-item"
+                                                                                        href="extrnalMethod.html">
+                                                                                        <i
+                                                                                                class="fa-fw fab fa-facebook-square"></i>
+                                                                                        External authentication methods
+                                                                                </a>
+                                                                        </li>
+                                                                        <li class="dropdown-divider"></li>
+                                                                        <li data-id="activity-log">
+                                                                                <a class="dropdown-item"
+                                                                                        href="activityLog.html">
+                                                                                        <i class="fa-fw far fa-eye"></i>
+                                                                                        Activity Log
+                                                                                </a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+                                                        <li data-id="nav-promotions" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-icm icm-bullhorn navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">Promotions</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="discounts">
+                                                                                <a class="dropdown-item"
+                                                                                        href="discount.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-signal fa-flip-horizontal"></i>
+                                                                                        Discounts
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="affiliates">
+                                                                                <a class="dropdown-item"
+                                                                                        href="Affiliate.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-user-friends"></i>
+                                                                                        Affiliates
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="newsletter-subscribers">
+                                                                                <a class="dropdown-item"
+                                                                                        href="NewsLetterSubscription.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-envelope"></i>
+                                                                                        Newsletter Subscribers
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="campaigns">
+                                                                                <a class="dropdown-item"
+                                                                                        href="Campaign.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-bullhorn"></i>
+                                                                                        Campaigns
+                                                                                </a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+                                                        <li data-id="nav-cms" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-icm icm-site-map navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">CMS</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="topics">
+                                                                                <a class="dropdown-item"
+                                                                                        href="cmsTopics.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-file-alt"></i>
+                                                                                        Topics
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="8537124912">
+                                                                                <a class="dropdown-item"
+                                                                                        href="cms-pageBuilder.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-th-large"></i>
+                                                                                        Page Builder
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="menus">
+                                                                                <a class="dropdown-item"
+                                                                                        href="cms-menus.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-stream"></i>
+                                                                                        Menus
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="news" class="dropdown-group">
+                                                                                <a class="dropdown-item"
+                                                                                        href="javascript:void(0)">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-newspaper"></i>
+                                                                                        News
+                                                                                </a>
+                                                                                <ul class="dropdown-menu">
+                                                                                        <li data-id="news-items">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="new-newsItem.html">
+                                                                                                        News items
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="news-comments">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="newsComment.html">
+                                                                                                        News comments
+                                                                                                </a>
+                                                                                        </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li data-id="blog" class="dropdown-group">
+                                                                                <a class="dropdown-item"
+                                                                                        href="javascript:void(0)">
+                                                                                        <i class="fa-fw fa fa-blog"></i>
+                                                                                        Blog
+                                                                                </a>
+                                                                                <ul class="dropdown-menu">
+                                                                                        <li data-id="blog-posts">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="cms-Blog.html">
+                                                                                                        Blog posts
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="blog-comments">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Blog/Comments">
+                                                                                                        Blog comments
+                                                                                                </a>
+                                                                                        </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li data-id="forums">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Forum/List">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-users"></i>
+                                                                                        Forums
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="message-templates">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/MessageTemplate/List">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-envelope"></i>
+                                                                                        Message templates
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="polls">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Poll/List">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-tasks"></i>
+                                                                                        Polls
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="widgets">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Widget/Providers">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-plus-square"></i>
+                                                                                        Widgets
+                                                                                </a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+                                                        <li data-id="nav-configuration" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-icm icm-equalizer navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">Configuration</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="settings" class="dropdown-group">
+                                                                                <a class="dropdown-item"
+                                                                                        href="javascript:void(0)">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-sliders-h"></i>
+                                                                                        Settings
+                                                                                </a>
+                                                                                <ul class="dropdown-menu">
+                                                                                        <li data-id="general-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="miscellaneousSettings.html">
+                                                                                                        General and
+                                                                                                        miscellaneous
+                                                                                                        settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="catalog-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="catalogSetting.html">
+                                                                                                        Catalog settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="search-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="searchSetting.html">
+                                                                                                        Search
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="customer-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="CustomerUserSetting.html">
+                                                                                                        Customer
+                                                                                                        settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="cart-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="shoppingCartSettings.html">
+                                                                                                        Shopping cart
+                                                                                                        settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="order-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="orderSettings.html">
+                                                                                                        Order settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="payment-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="paymentSettings.html">
+                                                                                                        Payment
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="media-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="mediaSettings.html">
+                                                                                                        Media settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="tax-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="taxSettings.html">
+                                                                                                        Tax settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="shipping-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="ShippingSettings.html">
+                                                                                                        Shipping
+                                                                                                        settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li
+                                                                                                data-id="reward-points-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="RewardPoints.html">
+                                                                                                        Reward points
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="blog-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="BlogSetting.html">
+                                                                                                        Blog settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="news-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="NewsSettings.html">
+                                                                                                        News settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="forum-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="ForumSettings.html">
+                                                                                                        Forum settings
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li
+                                                                                                data-id="dataexchange-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="exchangeSettings.html">
+                                                                                                        Data exchange
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li class="dropdown-divider">
+                                                                                        </li>
+                                                                                        <li data-id="all-settings">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="AllSettings.html">
+                                                                                                        All settings
+                                                                                                        (advanced)
+                                                                                                </a>
+                                                                                        </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li data-id="stores">
+                                                                                <a class="dropdown-item"
+                                                                                        href="store.html"> <i
+                                                                                                class="fa-fw fa fa-globe"></i>
+                                                                                        Stores
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="regional-settings"
+                                                                                class="dropdown-group">
+                                                                                <a class="dropdown-item"
+                                                                                        href="javascript:void(0)">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-language"></i>
+                                                                                        Regional Settings
+                                                                                </a>
+                                                                                <ul class="dropdown-menu">
+                                                                                        <li data-id="countries">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Country/List">
+                                                                                                        Countries
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="languages">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Language/List">
+                                                                                                        Languages
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="currencies">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Currency/List">
+                                                                                                        Currencies
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li class="dropdown-divider">
+                                                                                        </li>
+                                                                                        <li data-id="shipping-header"
+                                                                                                class="dropdown-header h6">
+                                                                                                Shipping</li>
+                                                                                        <li data-id="shipping-methods">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Shipping/Methods">
+                                                                                                        Shipping methods
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li
+                                                                                                data-id="shipping-providers">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Shipping/Providers">
+                                                                                                        Shipping rate
+                                                                                                        computation
+                                                                                                        methods
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li class="dropdown-divider">
+                                                                                        </li>
+                                                                                        <li data-id="tax-header"
+                                                                                                class="dropdown-header h6">
+                                                                                                Tax</li>
+                                                                                        <li data-id="tax-providers">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Tax/Providers">
+                                                                                                        Tax providers
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="tax-categories">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Tax/Categories">
+                                                                                                        Tax categories
+                                                                                                </a>
+                                                                                        </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li data-id="payment-methods">
+                                                                                <a class="dropdown-item"
+                                                                                        href="paymentsMethod.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-credit-card"></i>
+                                                                                        Payment methods
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="list-settings"
+                                                                                class="dropdown-group">
+                                                                                <a class="dropdown-item"
+                                                                                        href="javascript:void(0)">
+                                                                                        <i class="fa-fw fa fa-bars"></i>
+                                                                                        Lists
+                                                                                </a>
+                                                                                <ul class="dropdown-menu">
+                                                                                        <li data-id="delivery-times">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/DeliveryTime/List">
+                                                                                                        Delivery Times
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="quantity-units">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/QuantityUnit/List">
+                                                                                                        Quantity units
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="weights">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Measure/Weights">
+                                                                                                        Weights
+                                                                                                </a>
+                                                                                        </li>
+                                                                                        <li data-id="dimensions">
+                                                                                                <a class="dropdown-item"
+                                                                                                        href="/backend/Admin/Measure/Dimensions">
+                                                                                                        Dimensions
+                                                                                                </a>
+                                                                                        </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li data-id="email-accounts">
+                                                                                <a class="dropdown-item"
+                                                                                        href="emailAccounts.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-envelope"></i>
+                                                                                        Email Accounts
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="activity-types">
+                                                                                <a class="dropdown-item"
+                                                                                        href="ListTypes.html">
+                                                                                        <i class="fa-fw fa fa-eye"></i>
+                                                                                        Activity Types
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="acl">
+                                                                                <a class="dropdown-item"
+                                                                                        href="Permissions.html">
+                                                                                        <i class="fa-fw fa fa-lock"></i>
+                                                                                        Access control list
+                                                                                </a>
+                                                                        </li>
+                                                                        <li class="dropdown-divider"></li>
+                                                                        <li data-id="import">
+                                                                                <a class="dropdown-item"
+                                                                                        href="import.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-download "></i>
+                                                                                        Import
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="export">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Export/List">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-upload "></i>
+                                                                                        Export
+                                                                                </a>
+                                                                        </li>
+                                                                        <li class="dropdown-divider"></li>
+                                                                        <li data-id="themes">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Theme/List">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-fill-drip"></i>
+                                                                                        Themes
+                                                                                </a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+                                                        <li data-id="nav-system" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-icm icm-database navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">System</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="system-log">
+                                                                                <a class="dropdown-item"
+                                                                                        href="log.html">
+                                                                                        <i class="fa-fw fa fa-fire"></i>
+                                                                                        Log
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="queued-emails">
+                                                                                <a class="dropdown-item"
+                                                                                        href="MessageQueue.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-mail-bulk"></i>
+                                                                                        Message Queue
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="maintenance">
+                                                                                <a class="dropdown-item"
+                                                                                        href="Maintenance.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-database"></i>
+                                                                                        Maintenance
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="scheduled tasks">
+                                                                                <a class="dropdown-item"
+                                                                                        href="scheduledTasks.html">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-clock"></i>
+                                                                                        Scheduled Tasks
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="seo-names">
+                                                                                <a class="dropdown-item"
+                                                                                        href="seo.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-search"></i>
+                                                                                        SEO Names
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="warnings">
+                                                                                <a class="dropdown-item"
+                                                                                        href="warning.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-exclamation-triangle"></i>
+                                                                                        Warnings
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="system-info">
+                                                                                <a class="dropdown-item"
+                                                                                        href="systemInfo.html">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-info-circle"></i>
+                                                                                        System information
+                                                                                </a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+                                                        <li data-id="nav-plugins" class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle"
+                                                                        href="javascript:void(0)"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-icm icm-puzzle navbar-icon"></i>
+                                                                        <span
+                                                                                class="navbar-label d-none d-lg-block">Plugins</span>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li data-id="6986192304">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Clickatell">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-paper-plane"></i>
+                                                                                        Clickatell SMS Provider
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="2056891916">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Plugins/SmartStore.SearchLog/List">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-search"></i>
+                                                                                        Search Log
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="1628231328">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.GDPR">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-user-secret"></i>
+                                                                                        GDPR
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="3781333941">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.MegaSearch">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-search"></i>
+                                                                                        MegaSearch
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="0807670791">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Azure">
+                                                                                        <i
+                                                                                                class="fa-fw fab fa-windows"></i>
+                                                                                        Microsoft Azure Services
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="0474097937">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Mailchimp">
+                                                                                        <i
+                                                                                                class="fa-fw fab fa-mailchimp"></i>
+                                                                                        MailChimp e-mail synchronization
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="7801042325">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.TinyImage">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-compress-arrows-alt"></i>
+                                                                                        TinyImage
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="6159526415">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.DevTools">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-terminal"></i>
+                                                                                        Developer Tools
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="3440880303">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.OutputCache">
+                                                                                        <i class="fa-fw far fa-hdd"></i>
+                                                                                        Output Cache
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="5367428861">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.OrderNumberFormatter">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-file"></i>
+                                                                                        Number Formatter
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="4743489788">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.GoogleMerchantCenter">
+                                                                                        <i
+                                                                                                class="fa-fw fab fa-google"></i>
+                                                                                        Google Merchant Center feed
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="3278434032">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.BizImporter">
+                                                                                        <i class="fa-fw"></i>
+                                                                                        SmartStore.biz Importer
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="4828935853">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Debitoor">
+                                                                                        <i
+                                                                                                class="fa-fw fas fa-receipt"></i>
+                                                                                        Debitoor
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="4789050059">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.ContentSlider">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-images"></i>
+                                                                                        Content Slider
+                                                                                </a>
+                                                                        </li>
+                                                                        <li data-id="8252036720">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.MegaMenu">
+                                                                                        <i
+                                                                                                class="fa-fw far fa-list-alt"></i>
+                                                                                        Mega Menu
+                                                                                </a>
+                                                                        </li>
+                                                                        <li class="dropdown-divider"></li>
+                                                                        <li data-id="plugins-manage">
+                                                                                <a class="dropdown-item"
+                                                                                        href="/backend/Admin/Plugin/List">
+                                                                                        <i
+                                                                                                class="fa-fw fa fa-puzzle-piece"></i>
+                                                                                        Manage plugins
+                                                                                </a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+
+                                                </ul>
+
+
+                                        </div>
+
+                                        <div class="collapse navbar-collapse ml-auto">
+                                                <ul class="navbar-nav ml-auto">
+
+                                                        <li class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle navbar-tool"
+                                                                        href="javascript:void(0)" title="Actions"
+                                                                        data-toggle="dropdown">
+                                                                        <i class="icm icm-cog navbar-icon"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item"
+                                                                                href="http://demo.smartstore.com/backend/"
+                                                                                title="Public store - SmartStore.NET Demo Shop">
+                                                                                <i class="fa fa-fw fa-globe"></i>
+                                                                                SmartStore.NET Demo Shop
+                                                                        </a>
+                                                                        <a class="dropdown-item"
+                                                                                href="http://demo.smartstore.com/backend/"
+                                                                                title="Public store - SmartStore.NET Demo-Shop 2">
+                                                                                <i class="fa fa-fw fa-globe"></i>
+                                                                                SmartStore.NET Demo-Shop 2
+                                                                        </a>
+                                                                        <a class="dropdown-item"
+                                                                                href="/backend/Admin/Theme/Preview">
+                                                                                <i class="far fa-fw fa-eye"></i>
+                                                                                Preview Mode
+                                                                        </a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item"
+                                                                                href="/backend/Admin/Common/ClearCache?previousUrl=%2Fbackend%2FAdmin">
+                                                                                <i class="far fa-fw fa-trash-alt"></i>
+                                                                                Clear cache
+                                                                        </a>
+                                                                        <a class="dropdown-item"
+                                                                                href="/backend/Admin/Common/ClearDatabaseCache?previousUrl=%2Fbackend%2FAdmin">
+                                                                                <i class="fa fa-fw"></i>
+                                                                                Clear database cache
+                                                                        </a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item"
+                                                                                id="restart-application" href="#"
+                                                                                data-url="/backend/Admin/Common/RestartApplication?previousUrl=%2Fbackend%2FAdmin">
+                                                                                <i class="fa fa-fw fa-power-off"></i>
+                                                                                Restart application
+                                                                        </a>
+                                                                </div>
+                                                        </li>
+
+                                                        <form action="/backend/Admin/Common/LanguageSelected"
+                                                                class="hide" data-ajax="true"
+                                                                data-ajax-complete="onLanguageChangedRequestCompleted();"
+                                                                id="form-languageselector" method="post"><input
+                                                                        id="customerlanguage" name="customerlanguage"
+                                                                        type="hidden" value="2"></form>
+                                                        <li class="nav-item dropdown d-none d-md-block">
+                                                                <a class="nav-link dropdown-toggle navbar-tool"
+                                                                        href="javascript:void(0)" title="English"
+                                                                        data-toggle="dropdown">
+                                                                        <i class="icm icm-earth navbar-icon"></i>
+                                                                        <span class="pl-2">EN</span>
+                                                                </a>
+                                                                <div id="language-selector"
+                                                                        class="dropdown-menu dropdown-menu-right">
+                                                                        <a href="javascript:void(0)" data-lang-id="1"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/de.png"
+                                                                                        alt="Deutsch">
+                                                                                Deutsch
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="2"
+                                                                                class="dropdown-item disabled">
+                                                                                <img src="asset/img/flags/us.png"
+                                                                                        alt="English">
+                                                                                English
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="3"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/nl.png"
+                                                                                        alt="Dutch">
+                                                                                Dutch
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="4"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/fr.png"
+                                                                                        alt="French">
+                                                                                French
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="5"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/ru.png"
+                                                                                        alt="Russian">
+                                                                                Russian
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="6"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/jp.png"
+                                                                                        alt="Japanese">
+                                                                                Japanese
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="7"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/es.png"
+                                                                                        alt="Español">
+                                                                                Español
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="8"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/sa.png"
+                                                                                        alt="Arabic (Saudi Arabia)">
+                                                                                Arabic (Saudi Arabia)
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="9"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/in.png"
+                                                                                        alt="Hindi (India)">
+                                                                                Hindi (India)
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="10"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/tr.png"
+                                                                                        alt="Turkish (Turkey)">
+                                                                                Turkish (Turkey)
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="11"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/cn.png"
+                                                                                        alt="Chinese (Simplified, PRC)">
+                                                                                Chinese (Simplified, PRC)
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="12"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/it.png"
+                                                                                        alt="Italian (Italy)">
+                                                                                Italian (Italy)
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="13"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/pl.png"
+                                                                                        alt="Polish (Poland)">
+                                                                                Polish (Poland)
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="14"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/pt.png"
+                                                                                        alt="Portuguese (Portugal)">
+                                                                                Portuguese (Portugal)
+                                                                        </a>
+                                                                        <a href="javascript:void(0)" data-lang-id="15"
+                                                                                class="dropdown-item">
+                                                                                <img src="asset/img/flags/gr.png"
+                                                                                        alt="Greek (Greece)">
+                                                                                Greek (Greece)
+                                                                        </a>
+
+                                                                        <div class="dropdown-divider"></div>
+
+                                                                        <a href="/backend/Admin/Language/List"
+                                                                                class="dropdown-item manage-languages">
+                                                                                Manage languages
+                                                                        </a>
+                                                                </div>
+                                                        </li>
+                                                        <script>
+                                                                $(document).ready(function () {
+                                                                        $("#language-selector > .dropdown-item:not(.disabled, .manage-languages)").on('click', function () {
+                                                                                var el = $(this);
+                                                                                var langId = el.data("lang-id");
+                                                                                $("#customerlanguage").val(langId);
+                                                                                $("#form-languageselector").submit();
+                                                                        });
+                                                                });
+
+                                                                function onLanguageChangedRequestCompleted() {
+                                                                        location.reload();
+                                                                }
+                                                        </script>
+
+
+                                                        <li id="navtool-help"
+                                                                class="nav-item dropdown d-none d-md-block">
+                                                                <a class="nav-link dropdown-toggle navbar-tool"
+                                                                        href="javascript:void(0)" title="Help"
+                                                                        data-toggle="dropdown">
+                                                                        <i
+                                                                                class="icm icm-bubble-question navbar-icon"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item"
+                                                                                href="https://docs.smartstore.com/display/SMNET32/"
+                                                                                data-lang="en" target="help">
+                                                                                <i class="fa fa-fw fa-book"></i>
+                                                                                Documentation
+                                                                        </a>
+                                                                        <a class="dropdown-item"
+                                                                                href="http://community.smartstore.com/index.php?/&amp;k=880ea6a14ea49e853634fbdc5015a024&amp;setlanguage=1&amp;cal_id=&amp;langid=1"
+                                                                                data-lang="en" target="help">
+                                                                                <i class="fa fa-fw fa-comment"></i>
+                                                                                Community
+                                                                        </a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item"
+                                                                                href="/backend/Admin/Home/About">
+                                                                                <i class="fa fa-fw fa-info-circle"></i>
+                                                                                About SmartStore.NET
+                                                                        </a>
+                                                                </div>
+                                                        </li>
+
+                                                        <li class="nav-item dropdown ml-md-3">
+                                                                <a id="current-user"
+                                                                        class="nav-link dropdown-toggle navbar-tool"
+                                                                        data-toggle="dropdown" title="demo"
+                                                                        href="account.html">
+
+                                                                        <i class="icm icm-user navbar-icon"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item" href="account.html">
+                                                                                <i class="fa fa-fw fa-user"></i>
+                                                                                Account
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="/backend/logout">
+                                                                                <i
+                                                                                        class="fal fa-fw fa-sign-out-alt"></i>
+                                                                                Logout?
+                                                                        </a>
+                                                                </div>
+                                                        </li>
+
+                                                </ul>
+                                        </div>
+
+                                </nav>
+
+
+                                <script type="text/javascript">
+
+                                        $(function () {
+
+                                                $("#restart-application").on('click', function (e) {
+                                                        e.preventDefault();
+                                                        $.throbber.show({
+                                                                message: "Restarting the application...",
+                                                                callback: function () {
+                                                                        setLocation($(e.target).data("url"));
+
+                                                                }
+                                                        });
+                                                        return false;
+                                                });
+
+                                                // add mainmenu tooltips;
+                                                $('#tools [rel=tooltip]').tooltip({
+                                                        placement: 'bottom'
+                                                });
+
+                                        });
+
+                                </script>
+
+
+                                <div id="breadcrumb">
+                                        <!-- SiteMapPath here-->
+
+                                </div>
+                        </header>
+                        <div id="content">
+                                <div class="cph">
+                                        <div class="section-header">
+                                                <div class="title">
+                                                        <i class="far fa-chart-bar"></i>
+                                                        Store Statistics
+                                                </div>
+                                        </div>
+
+                                        <div class="dashboard">
+
+
+                                                <div class="row">
+                                                        <div class="col-lg-9 col-xl-10">
+                                                                <div class="stats-today row mb-4">
+                                                                        <div class="col">
+                                                                                <h1
+                                                                                        class="stats-today-title display-4 m-0">
+                                                                                        Today</h1>
+                                                                        </div>
+
+                                                                        <div class="col-auto stats-today-item ml-auto">
+                                                                                <div class="stats-today-item-label">
+                                                                                        Pending</div>
+                                                                                <div class="stats-today-item-value">0,00
+                                                                                        €</div>
+                                                                        </div>
+                                                                        <div class="col-auto stats-today-item">
+                                                                                <div class="stats-today-item-label">
+                                                                                        Processing</div>
+                                                                                <div class="stats-today-item-value">0,00
+                                                                                        €</div>
+                                                                        </div>
+                                                                        <div class="col-auto stats-today-item">
+                                                                                <div class="stats-today-item-label">
+                                                                                        Complete</div>
+                                                                                <div class="stats-today-item-value">0,00
+                                                                                        €</div>
+                                                                        </div>
+                                                                        <div class="col-auto stats-today-item">
+                                                                                <div class="stats-today-item-label">
+                                                                                        Cancelled</div>
+                                                                                <div class="stats-today-item-value">0,00
+                                                                                        €</div>
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="card shadow-sm mb-4">
+                                                                        <h6
+                                                                                class="card-header font-weight-medium border-bottom-0">
+                                                                                <i class="fa fa-signal pr-2"></i>
+                                                                                Order totals
+                                                                        </h6>
+
+                                                                        <div class="table-responsive">
+                                                                                <table class="table table-striped m-0">
+                                                                                        <thead>
+                                                                                                <tr>
+                                                                                                        <th>Order Status
+                                                                                                        </th>
+                                                                                                        <th>This Week
+                                                                                                        </th>
+                                                                                                        <th>This Month
+                                                                                                        </th>
+                                                                                                        <th>This Year
+                                                                                                        </th>
+                                                                                                        <th>All time
+                                                                                                        </th>
+                                                                                                </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                                <tr>
+                                                                                                        <td>
+                                                                                                                <a
+                                                                                                                        href="orders.html">Pending</a>
+                                                                                                        </td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>52,00 €</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td>
+                                                                                                                <a
+                                                                                                                        href="orders.html">Processing</a>
+                                                                                                        </td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td>
+                                                                                                                <a
+                                                                                                                        href="orders.html">Complete</a>
+                                                                                                        </td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td>
+                                                                                                                <a
+                                                                                                                        href="orders.html">Cancelled</a>
+                                                                                                        </td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                        <td>0,00 €</td>
+                                                                                                </tr>
+                                                                                        </tbody>
+                                                                                </table>
+                                                                        </div>
+                                                                </div>
+
+
+                                                                <div class="row">
+                                                                        <div class="col-xl-6">
+                                                                                <div class="card shadow-sm mb-4">
+                                                                                        <h6
+                                                                                                class="card-header font-weight-medium border-bottom-0">
+                                                                                                <i
+                                                                                                        class="fa fa-star pr-2"></i>
+                                                                                                Bestsellers by quantity
+                                                                                        </h6>
+
+                                                                                        <div class="table-responsive">
+                                                                                                <table
+                                                                                                        class="table table-striped m-0">
+                                                                                                        <thead>
+                                                                                                                <tr>
+                                                                                                                        <th>Name
+                                                                                                                        </th>
+                                                                                                                        <th>Total
+                                                                                                                                quantity
+                                                                                                                        </th>
+                                                                                                                        <th>Total
+                                                                                                                                amount
+                                                                                                                                (excl
+                                                                                                                                tax)
+                                                                                                                        </th>
+                                                                                                                </tr>
+                                                                                                        </thead>
+                                                                                                        <tbody>
+                                                                                                                <tr>
+                                                                                                                        <td>
+                                                                                                                                <span
+                                                                                                                                        class="badge badge-secondary d-none mr-1"></span><a
+                                                                                                                                        href="/backend/Admin/Product/Edit/254"
+                                                                                                                                        title="Ladies’ Sports Jacket">Ladies’
+                                                                                                                                        Sports
+                                                                                                                                        Jacket</a>
+                                                                                                                        </td>
+                                                                                                                        <td>1
+                                                                                                                        </td>
+                                                                                                                        <td>43,33
+                                                                                                                                €
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                        </tbody>
+                                                                                                </table>
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                        <div class="col-xl-6">
+                                                                                <div class="card shadow-sm mb-4">
+                                                                                        <h6
+                                                                                                class="card-header font-weight-medium border-bottom-0">
+                                                                                                <i
+                                                                                                        class="fa fa-star pr-2"></i>
+                                                                                                Bestsellers by amount
+                                                                                        </h6>
+
+                                                                                        <div class="table-responsive">
+                                                                                                <table
+                                                                                                        class="table table-striped m-0">
+                                                                                                        <thead>
+                                                                                                                <tr>
+                                                                                                                        <th>Name
+                                                                                                                        </th>
+                                                                                                                        <th>Total
+                                                                                                                                quantity
+                                                                                                                        </th>
+                                                                                                                        <th>Total
+                                                                                                                                amount
+                                                                                                                                (excl
+                                                                                                                                tax)
+                                                                                                                        </th>
+                                                                                                                </tr>
+                                                                                                        </thead>
+                                                                                                        <tbody>
+                                                                                                                <tr>
+                                                                                                                        <td>
+                                                                                                                                <span
+                                                                                                                                        class="badge badge-secondary d-none mr-1"></span><a
+                                                                                                                                        href="/backend/Admin/Product/Edit/254"
+                                                                                                                                        title="Ladies’ Sports Jacket">Ladies’
+                                                                                                                                        Sports
+                                                                                                                                        Jacket</a>
+                                                                                                                        </td>
+                                                                                                                        <td>1
+                                                                                                                        </td>
+                                                                                                                        <td>43,33
+                                                                                                                                €
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                        </tbody>
+                                                                                                </table>
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-xl-6">
+                                                                                <div class="card shadow-sm mb-4">
+                                                                                        <h6
+                                                                                                class="card-header font-weight-medium border-bottom-0">
+                                                                                                <i
+                                                                                                        class="fa fa-users pr-2"></i>
+                                                                                                Registered customers
+                                                                                        </h6>
+
+                                                                                        <div class="table-responsive">
+                                                                                                <table
+                                                                                                        class="table table-striped m-0">
+                                                                                                        <thead>
+                                                                                                                <tr>
+                                                                                                                        <th>Period
+                                                                                                                        </th>
+                                                                                                                        <th>Count
+                                                                                                                        </th>
+                                                                                                                </tr>
+                                                                                                        </thead>
+                                                                                                        <tbody>
+                                                                                                                <tr>
+                                                                                                                        <td>In the
+                                                                                                                                last
+                                                                                                                                7
+                                                                                                                                days
+                                                                                                                        </td>
+                                                                                                                        <td>0
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                        <td>In the
+                                                                                                                                last
+                                                                                                                                14
+                                                                                                                                days
+                                                                                                                        </td>
+                                                                                                                        <td>0
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                        <td>In the
+                                                                                                                                last
+                                                                                                                                month
+                                                                                                                        </td>
+                                                                                                                        <td>0
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                        <td>In the
+                                                                                                                                last
+                                                                                                                                year
+                                                                                                                        </td>
+                                                                                                                        <td>0
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                        </tbody>
+                                                                                                </table>
+                                                                                        </div>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                        <div class="col-xl-6">
+                                                                                <div class="card shadow-sm mb-4">
+                                                                                        <h6
+                                                                                                class="card-header font-weight-medium border-bottom-0">
+                                                                                                <i
+                                                                                                        class="fa fa-signal pr-2"></i>
+                                                                                                Incomplete orders
+                                                                                        </h6>
+
+                                                                                        <div class="table-responsive">
+                                                                                                <table
+                                                                                                        class="table table-striped m-0">
+                                                                                                        <thead>
+                                                                                                                <tr>
+                                                                                                                        <th>Item
+                                                                                                                        </th>
+                                                                                                                        <th>Total
+                                                                                                                        </th>
+                                                                                                                        <th>Count
+                                                                                                                        </th>
+                                                                                                                </tr>
+                                                                                                        </thead>
+                                                                                                        <tbody>
+                                                                                                                <tr>
+                                                                                                                        <td>
+                                                                                                                                <a
+                                                                                                                                        href="/backend/Admin/Order/List?PaymentStatusIds=10">Total
+                                                                                                                                        unpaid
+                                                                                                                                        orders
+                                                                                                                                        (pending
+                                                                                                                                        payment
+                                                                                                                                        status)</a>
+                                                                                                                        </td>
+                                                                                                                        <td>52,00
+                                                                                                                                €
+                                                                                                                        </td>
+                                                                                                                        <td>1
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                        <td>
+                                                                                                                                <a
+                                                                                                                                        href="/backend/Admin/Order/List?ShippingStatusIds=20">Total
+                                                                                                                                        not
+                                                                                                                                        yet
+                                                                                                                                        shipped
+                                                                                                                                        orders</a>
+                                                                                                                        </td>
+                                                                                                                        <td>52,00
+                                                                                                                                €
+                                                                                                                        </td>
+                                                                                                                        <td>1
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                        <td>
+                                                                                                                                <a
+                                                                                                                                        href="/backend/Admin/Order/List?OrderStatusIds=10">Total
+                                                                                                                                        incomplete
+                                                                                                                                        orders
+                                                                                                                                        (pending
+                                                                                                                                        order
+                                                                                                                                        status)</a>
+                                                                                                                        </td>
+                                                                                                                        <td>52,00
+                                                                                                                                €
+                                                                                                                        </td>
+                                                                                                                        <td>1
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                        <td>&nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td>&nbsp;
+                                                                                                                        </td>
+                                                                                                                        <td>&nbsp;
+                                                                                                                        </td>
+                                                                                                                </tr>
+                                                                                                        </tbody>
+                                                                                                </table>
+                                                                                        </div>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-xl-2">
+                                                                <div class="marketplace-feed">
+                                                                        <div class="marketplace-feed-title">
+                                                                                <i class="fa fa-rss"></i>
+                                                                                Marketplace News
+                                                                        </div>
+
+
+
+                                                                        <div class="marketplace-feed-body">
+                                                                                <div class="marketplace-feed-item">
+                                                                                        <div
+                                                                                                class="marketplace-feed-item-title">
+                                                                                                <a href="http://community.smartstore.com/index.php?/files/file/180-loadbee/"
+                                                                                                        target="MarketplaceWindow"><strong>loadbee</strong></a>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                                <span class="muted">27
+                                                                                                        days ago -
+                                                                                                </span> This plugin
+                                                                                                integrates the loadbee
+                                                                                                API into your product
+                                                                                                catalog to display
+                                                                                                enhanced product data.
+                                                                                                All you need is your
+                                                                                                loadbee account data and
+                                                                                                an...
+                                                                                                <a
+                                                                                                        href="http://community.smartstore.com/index.php?/files/file/180-loadbee/">more
+                                                                                                        info...</a>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="marketplace-feed-item">
+                                                                                        <div
+                                                                                                class="marketplace-feed-item-title">
+                                                                                                <a href="http://community.smartstore.com/index.php?/files/file/179-twin-cards-free/"
+                                                                                                        target="MarketplaceWindow"><strong>Twin
+                                                                                                                Cards
+                                                                                                                (free)</strong></a>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                                <span class="muted">an
+                                                                                                        month ago -
+                                                                                                </span> Features two
+                                                                                                similar cards. The cards
+                                                                                                have background images
+                                                                                                as well as colored
+                                                                                                background layer with
+                                                                                                transparency and text.
+                                                                                                The layer expands
+                                                                                                over...
+                                                                                                <a
+                                                                                                        href="http://community.smartstore.com/index.php?/files/file/179-twin-cards-free/">more
+                                                                                                        info...</a>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="marketplace-feed-item">
+                                                                                        <div
+                                                                                                class="marketplace-feed-item-title">
+                                                                                                <a href="http://community.smartstore.com/index.php?/files/file/178-team-introduction-free/"
+                                                                                                        target="MarketplaceWindow"><strong>Team
+                                                                                                                Introduction
+                                                                                                                (free)</strong></a>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                                <span class="muted">an
+                                                                                                        month ago -
+                                                                                                </span> Features a
+                                                                                                simple team introduction
+                                                                                                story. Each block
+                                                                                                represents one person
+                                                                                                with picture, name,
+                                                                                                position and linkable
+                                                                                                social media icons.
+
+
+                                                                                                To use...
+                                                                                                <a
+                                                                                                        href="http://community.smartstore.com/index.php?/files/file/178-team-introduction-free/">more
+                                                                                                        info...</a>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="marketplace-feed-item">
+                                                                                        <div
+                                                                                                class="marketplace-feed-item-title">
+                                                                                                <a href="http://community.smartstore.com/index.php?/files/file/177-pricing-plan-free/"
+                                                                                                        target="MarketplaceWindow"><strong>Pricing
+                                                                                                                Plan
+                                                                                                                (free)</strong></a>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                                <span class="muted">an
+                                                                                                        month ago -
+                                                                                                </span> Simple
+                                                                                                three-part story to
+                                                                                                display pricing plans or
+                                                                                                similar.
+
+
+                                                                                                To use this as a
+                                                                                                template, save
+                                                                                                downloaded .story file
+                                                                                                in:
+                                                                                                App_Data &gt; Tenants
+                                                                                                &gt; Defa...
+                                                                                                <a
+                                                                                                        href="http://community.smartstore.com/index.php?/files/file/177-pricing-plan-free/">more
+                                                                                                        info...</a>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="marketplace-feed-item">
+                                                                                        <div
+                                                                                                class="marketplace-feed-item-title">
+                                                                                                <a href="http://community.smartstore.com/index.php?/files/file/176-big-preview-free/"
+                                                                                                        target="MarketplaceWindow"><strong>Big
+                                                                                                                Preview
+                                                                                                                (free)</strong></a>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                                <span class="muted">an
+                                                                                                        month ago -
+                                                                                                </span> This story
+                                                                                                features a big,
+                                                                                                prominent block with
+                                                                                                background picture at
+                                                                                                the top. Beneath the
+                                                                                                header block are 3
+                                                                                                information blocks each
+                                                                                                colored diffe...
+                                                                                                <a
+                                                                                                        href="http://community.smartstore.com/index.php?/files/file/176-big-preview-free/">more
+                                                                                                        info...</a>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="marketplace-feed-item">
+                                                                                        <div
+                                                                                                class="marketplace-feed-item-title">
+                                                                                                <a href="http://community.smartstore.com/index.php?/files/file/175-heidelpay-payment-plugin/"
+                                                                                                        target="MarketplaceWindow"><strong>heidelpay
+                                                                                                                Payment
+                                                                                                                Plugin</strong></a>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                                <span class="muted">an
+                                                                                                        month ago -
+                                                                                                </span> Die Omnichannel
+                                                                                                Payment Solution:
+                                                                                                Vollständige
+                                                                                                Zahlungsabwicklung und
+                                                                                                -management mit
+                                                                                                heidelpay&nbsp;Verfügbare
+                                                                                                Zahlarten:KreditkarteLastschrift
+                                                                                                (SEPA /...
+                                                                                                <a
+                                                                                                        href="http://community.smartstore.com/index.php?/files/file/175-heidelpay-payment-plugin/">more
+                                                                                                        info...</a>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <a class="btn btn-primary btn-block"
+                                                                                href="http://community.smartstore.com/marketplace/"
+                                                                                target="MarketplaceWindow">
+                                                                                <span>Visit Marketplace</span>
+                                                                        </a>
+                                                                </div>
+
+                                                        </div>
+                                                </div>
+
+
+                                        </div>
+
+
+                                </div>
+                                <div id="ajax-busy">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                </div>
+                        </div>
+
+
+                </div>
+
+
+        </div>
+
+        <script src="asset/js/telerik.common.min.js"></script>
+        <script src="asset/js/telerik.textbox.min.js"></script>
+        <script src="asset/js/telerik.calendar.min.js"></script>
+        <script src="asset/js/telerik.datepicker.min.js"></script>
+        <script src="asset/js/fileUpload.js"></script>
+        <script src="asset/js/linkBuilder.js"></script>
+        <script src="asset/js/modernizr-custom.js"></script>
+
+        <script src="asset/js/main.js"></script>
+
+
+
+</body>
+
+</html>

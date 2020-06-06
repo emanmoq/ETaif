@@ -1,0 +1,1288 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Control Panel</title>
+    <meta charset="utf-8">
+    <link rel=icon href="asset/img/logo.png" type="image/png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <link rel="stylesheet" href="asset/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="asset/css/owl.carousel.css" type="text/css">
+    <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css/icm.css" type="text/css">
+    <link rel="stylesheet" href="asset/css/theme.css" type="text/css">
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/script1.js"></script>
+    <script src="asset/js/script2.js"></script>
+
+
+    <script>
+        window.Res = {
+            "Common.Notification": "Alert",
+            "Common.Close": "Close",
+            "Common.On": "On",
+            "Common.OK": "OK",
+            "Common.Cancel": "Cancel",
+            "Common.Off": "Off",
+            "Products.Longdesc.More": "Show more",
+            "Products.Longdesc.Less": "Show less",
+            "Jquery.Validate.Email": "Please enter a valid email address.",
+            "Jquery.Validate.Required": "This field is required.",
+            "Jquery.Validate.Remote": "Please fix this field.",
+            "Jquery.Validate.Url": "Please enter a valid URL.",
+            "Jquery.Validate.Date": "Please enter a valid date.",
+            "Jquery.Validate.DateISO": "Please enter a valid date (ISO).",
+            "Jquery.Validate.Number": "Please enter a valid number.",
+            "Jquery.Validate.Digits": "Please enter only digits.",
+            "Jquery.Validate.Creditcard": "Please enter a valid credit card number.",
+            "Jquery.Validate.Equalto": "Please enter the same value again.",
+            "Jquery.Validate.Maxlength": "Please enter no more than {0} characters.",
+            "Jquery.Validate.Minlength": "Please enter at least {0} characters.",
+            "Jquery.Validate.Rangelength": "Please enter a value between {0} and {1} characters long.",
+            "jquery.Validate.Range": "Please enter a value between {0} and {1}.",
+            "Jquery.Validate.Max": "Please enter a value less than or equal to {0}.",
+            "Jquery.Validate.Min": "Please enter a value greater than or equal to {0}.",
+            "Admin.Common.AreYouSure": "Are you sure?",
+        };
+    </script>
+    <script>
+        try {
+            if (typeof navigator === 'undefined') navigator = {};
+            html = document.documentElement;
+            if (/Edge\/\d+/.test(navigator.userAgent)) { html.className += ' edge' }
+            else if ('mozMatchesSelector' in html) { html.className += ' moz' }
+            else if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) { html.className += ' ios' }
+            else if ('webkitMatchesSelector' in html) { html.className += ' wkit' };
+            html.className += (this.top === this.window ? ' not-' : ' ') + 'framed';
+        } catch (e) { }
+    </script>
+    <script>var ieMode = 0; try { if (document.documentMode) { ieMode = document.documentMode; html.className += ' ie iepost8 ie' + document.documentMode } else { html.className += ' not-ie' }; } catch (e) { }; navigator.isIE = ieMode</script>
+
+
+</head>
+
+<body>
+    <div id="page">
+
+
+        <div class="page-main">
+            <header id="header">
+
+
+
+                <nav id="navbar" class="navbar navbar-dark navbar-expand">
+
+                    <a class="navbar-brand mx-0 mr-3" href="/backend/Admin">
+
+                        <img class="navbar-img d-none d-lg-block"
+                            src="/backend/Administration/Content/images/smartstore.svg" alt="smartstore.NET">
+                        <img class="navbar-img d-lg-none"
+                            src="/backend/Administration/Content/images/smartstore-icon.svg" alt="smartstore.NET">
+                    </a>
+
+                    <div id="navbar-menu" class="collapse navbar-collapse mr-auto">
+
+
+
+
+                        <ul class="navbar-nav">
+                            <li data-id="nav-dashboard" class="nav-item dropdown d-none d-md-block">
+                                <a class="nav-link" href="/backend/Admin">
+                                    <i class="icm icm-icm icm-home navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Dashboard</span>
+                                </a>
+                            </li>
+                            <li data-id="nav-catalog" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-cube navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Catalog</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="categories-list">
+                                        <a class="dropdown-item" href="/backend/Admin/Category">
+                                            <i class="fa-fw fa fa-sitemap"></i>
+                                            Categories
+                                        </a>
+                                    </li>
+                                    <li data-id="products">
+                                        <a class="dropdown-item" href="/backend/Admin/Product/List">
+                                            <i class="fa-fw fa fa-cube"></i>
+                                            Manage products
+                                        </a>
+                                    </li>
+                                    <li data-id="products-bulk-edit">
+                                        <a class="dropdown-item" href="/backend/Admin/Product/BulkEdit">
+                                            <i class="fa-fw fa fa-cubes"></i>
+                                            Bulk edit products
+                                        </a>
+                                    </li>
+                                    <li data-id="reviews">
+                                        <a class="dropdown-item" href="/backend/Admin/ProductReview/List">
+                                            <i class="fa-fw far fa-star-half"></i>
+                                            Product reviews
+                                        </a>
+                                    </li>
+                                    <li data-id="manufacturers">
+                                        <a class="dropdown-item" href="/backend/Admin/Manufacturer/List">
+                                            <i class="fa-fw far fa-building"></i>
+                                            Manufacturers
+                                        </a>
+                                    </li>
+                                    <li data-id="tags">
+                                        <a class="dropdown-item" href="/backend/Admin/Product/ProductTags">
+                                            <i class="fa-fw fa fa-tags"></i>
+                                            Product tags
+                                        </a>
+                                    </li>
+                                    <li data-id="stockreport">
+                                        <a class="dropdown-item" href="/backend/Admin/Product/LowStockReport">
+                                            <i class="fa-fw fa fa-sort-numeric-down"></i>
+                                            Low stock report
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="attributes-header" class="dropdown-header h6">Attributes</li>
+                                    <li data-id="attributes">
+                                        <a class="dropdown-item" href="/backend/Admin/ProductAttribute/List">
+                                            <i class="fa-fw far fa-list-alt"></i>
+                                            Product Attributes
+                                        </a>
+                                    </li>
+                                    <li data-id="specification-attributes">
+                                        <a class="dropdown-item" href="/backend/Admin/SpecificationAttribute/List">
+                                            <i class="fa-fw fa fa-list"></i>
+                                            Specification Attributes
+                                        </a>
+                                    </li>
+                                    <li data-id="checkout-attributes">
+                                        <a class="dropdown-item" href="/backend/Admin/CheckoutAttribute/List">
+                                            <i class="fa-fw fa fa-list"></i>
+                                            Checkout Attributes
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-sales" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-chart-growth navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Sales</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="orders">
+                                        <a class="dropdown-item" href="/backend/Admin/Order/List">
+                                            <i class="fa-fw far fa-chart-bar"></i>
+                                            Orders
+                                        </a>
+                                    </li>
+                                    <li data-id="shipments">
+                                        <a class="dropdown-item" href="/backend/Admin/Order/ShipmentList">
+                                            <i class="fa-fw fa fa-truck-moving fa-flip-horizontal"></i>
+                                            Shipments
+                                        </a>
+                                    </li>
+                                    <li data-id="recurring-payments">
+                                        <a class="dropdown-item" href="/backend/Admin/RecurringPayment/List">
+                                            <i class="fa-fw fa fa-redo"></i>
+                                            Recurring payments
+                                        </a>
+                                    </li>
+                                    <li data-id="return-requests">
+                                        <a class="dropdown-item" href="/backend/Admin/ReturnRequest/List">
+                                            <i class="fa-fw fa fa-truck-moving"></i>
+                                            Return requests
+                                        </a>
+                                    </li>
+                                    <li data-id="gift-cards">
+                                        <a class="dropdown-item" href="/backend/Admin/GiftCard/List">
+                                            <i class="fa-fw fa fa-gifts"></i>
+                                            Gift cards
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="shopping-carts">
+                                        <a class="dropdown-item" href="/backend/Admin/ShoppingCart/CurrentCarts">
+                                            <i class="fa-fw fa fa-cart-arrow-down"></i>
+                                            Current shopping carts
+                                        </a>
+                                    </li>
+                                    <li data-id="wishlists">
+                                        <a class="dropdown-item" href="/backend/Admin/ShoppingCart/CurrentWishlists">
+                                            <i class="fa-fw far fa-heart"></i>
+                                            Current wishlists
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="bestsellers">
+                                        <a class="dropdown-item" href="/backend/Admin/Order/BestsellersReport">
+                                            <i class="fa-fw far fa-thumbs-up"></i>
+                                            Bestsellers
+                                        </a>
+                                    </li>
+                                    <li data-id="flopsellers">
+                                        <a class="dropdown-item" href="/backend/Admin/Order/NeverSoldReport">
+                                            <i class="fa-fw far fa-thumbs-down"></i>
+                                            Products never purchased
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-users" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-users2 navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Customers</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="customers">
+                                        <a class="dropdown-item" href="/backend/Admin/Customer/List">
+                                            <i class="fa-fw fa fa-user-alt"></i>
+                                            Customers
+                                        </a>
+                                    </li>
+                                    <li data-id="customer-roles">
+                                        <a class="dropdown-item" href="/backend/Admin/CustomerRole/List">
+                                            <i class="fa-fw fa fa-users"></i>
+                                            Customer roles
+                                        </a>
+                                    </li>
+                                    <li data-id="online-customers">
+                                        <a class="dropdown-item" href="/backend/Admin/OnlineCustomer/List">
+                                            <i class="fa-fw fa fa-sign-in-alt"></i>
+                                            Online customers
+                                        </a>
+                                    </li>
+                                    <li data-id="customer-reports">
+                                        <a class="dropdown-item" href="/backend/Admin/Customer/Reports">
+                                            <i class="fa-fw far fa-chart-bar"></i>
+                                            Customer reports
+                                        </a>
+                                    </li>
+                                    <li data-id="external-auth">
+                                        <a class="dropdown-item" href="/backend/Admin/ExternalAuthentication/Providers">
+                                            <i class="fa-fw fab fa-facebook-square"></i>
+                                            External authentication methods
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="activity-log">
+                                        <a class="dropdown-item" href="/backend/Admin/ActivityLog/ListLogs">
+                                            <i class="fa-fw far fa-eye"></i>
+                                            Activity Log
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-promotions" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-bullhorn navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Promotions</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="discounts">
+                                        <a class="dropdown-item" href="/backend/Admin/Discount/List">
+                                            <i class="fa-fw fa fa-signal fa-flip-horizontal"></i>
+                                            Discounts
+                                        </a>
+                                    </li>
+                                    <li data-id="affiliates">
+                                        <a class="dropdown-item" href="/backend/Admin/Affiliate/List">
+                                            <i class="fa-fw fa fa-user-friends"></i>
+                                            Affiliates
+                                        </a>
+                                    </li>
+                                    <li data-id="newsletter-subscribers">
+                                        <a class="dropdown-item" href="/backend/Admin/NewsLetterSubscription/List">
+                                            <i class="fa-fw fa fa-envelope"></i>
+                                            Newsletter Subscribers
+                                        </a>
+                                    </li>
+                                    <li data-id="campaigns">
+                                        <a class="dropdown-item" href="/backend/Admin/Campaign/List">
+                                            <i class="fa-fw fa fa-bullhorn"></i>
+                                            Campaigns
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-cms" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-site-map navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">CMS</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="topics">
+                                        <a class="dropdown-item" href="/backend/Admin/Topic/List">
+                                            <i class="fa-fw far fa-file-alt"></i>
+                                            Topics
+                                        </a>
+                                    </li>
+                                    <li data-id="6180412351">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.PageBuilder">
+                                            <i class="fa-fw fa fa-th-large"></i>
+                                            Page Builder
+                                        </a>
+                                    </li>
+                                    <li data-id="menus">
+                                        <a class="dropdown-item" href="/backend/Admin/Menu/List">
+                                            <i class="fa-fw far fa-stream"></i>
+                                            Menus
+                                        </a>
+                                    </li>
+                                    <li data-id="news" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw far fa-newspaper"></i>
+                                            News
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="news-items">
+                                                <a class="dropdown-item" href="/backend/Admin/News/List">
+                                                    News items
+                                                </a>
+                                            </li>
+                                            <li data-id="news-comments">
+                                                <a class="dropdown-item" href="/backend/Admin/News/Comments">
+                                                    News comments
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="blog" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-blog"></i>
+                                            Blog
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="blog-posts">
+                                                <a class="dropdown-item" href="/backend/Admin/Blog/List">
+                                                    Blog posts
+                                                </a>
+                                            </li>
+                                            <li data-id="blog-comments">
+                                                <a class="dropdown-item" href="/backend/Admin/Blog/Comments">
+                                                    Blog comments
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="forums">
+                                        <a class="dropdown-item" href="/backend/Admin/Forum/List">
+                                            <i class="fa-fw fa fa-users"></i>
+                                            Forums
+                                        </a>
+                                    </li>
+                                    <li data-id="message-templates">
+                                        <a class="dropdown-item" href="/backend/Admin/MessageTemplate/List">
+                                            <i class="fa-fw far fa-envelope"></i>
+                                            Message templates
+                                        </a>
+                                    </li>
+                                    <li data-id="polls">
+                                        <a class="dropdown-item" href="/backend/Admin/Poll/List">
+                                            <i class="fa-fw fa fa-tasks"></i>
+                                            Polls
+                                        </a>
+                                    </li>
+                                    <li data-id="widgets">
+                                        <a class="dropdown-item" href="/backend/Admin/Widget/Providers">
+                                            <i class="fa-fw fa fa-plus-square"></i>
+                                            Widgets
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-configuration" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-equalizer navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Configuration</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="settings" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-sliders-h"></i>
+                                            Settings
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="general-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/GeneralCommon">
+                                                    General and miscellaneous settings
+                                                </a>
+                                            </li>
+                                            <li data-id="catalog-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Catalog">
+                                                    Catalog settings
+                                                </a>
+                                            </li>
+                                            <li data-id="search-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Search">
+                                                    Search
+                                                </a>
+                                            </li>
+                                            <li data-id="customer-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/CustomerUser">
+                                                    Customer settings
+                                                </a>
+                                            </li>
+                                            <li data-id="cart-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/ShoppingCart">
+                                                    Shopping cart settings
+                                                </a>
+                                            </li>
+                                            <li data-id="order-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Order">
+                                                    Order settings
+                                                </a>
+                                            </li>
+                                            <li data-id="payment-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Payment">
+                                                    Payment
+                                                </a>
+                                            </li>
+                                            <li data-id="media-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Media">
+                                                    Media settings
+                                                </a>
+                                            </li>
+                                            <li data-id="tax-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Tax">
+                                                    Tax settings
+                                                </a>
+                                            </li>
+                                            <li data-id="shipping-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Shipping">
+                                                    Shipping settings
+                                                </a>
+                                            </li>
+                                            <li data-id="reward-points-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/RewardPoints">
+                                                    Reward points
+                                                </a>
+                                            </li>
+                                            <li data-id="blog-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Blog">
+                                                    Blog settings
+                                                </a>
+                                            </li>
+                                            <li data-id="news-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/News">
+                                                    News settings
+                                                </a>
+                                            </li>
+                                            <li data-id="forum-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/Forum">
+                                                    Forum settings
+                                                </a>
+                                            </li>
+                                            <li data-id="dataexchange-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/DataExchange">
+                                                    Data exchange
+                                                </a>
+                                            </li>
+                                            <li class="dropdown-divider"></li>
+                                            <li data-id="all-settings">
+                                                <a class="dropdown-item" href="/backend/Admin/Setting/AllSettings">
+                                                    All settings (advanced)
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="stores">
+                                        <a class="dropdown-item" href="/backend/Admin/Store/List">
+                                            <i class="fa-fw fa fa-globe"></i>
+                                            Stores
+                                        </a>
+                                    </li>
+                                    <li data-id="regional-settings" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-language"></i>
+                                            Regional Settings
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="countries">
+                                                <a class="dropdown-item" href="/backend/Admin/Country/List">
+                                                    Countries
+                                                </a>
+                                            </li>
+                                            <li data-id="languages">
+                                                <a class="dropdown-item" href="/backend/Admin/Language/List">
+                                                    Languages
+                                                </a>
+                                            </li>
+                                            <li data-id="currencies">
+                                                <a class="dropdown-item" href="/backend/Admin/Currency/List">
+                                                    Currencies
+                                                </a>
+                                            </li>
+                                            <li class="dropdown-divider"></li>
+                                            <li data-id="shipping-header" class="dropdown-header h6">Shipping</li>
+                                            <li data-id="shipping-methods">
+                                                <a class="dropdown-item" href="/backend/Admin/Shipping/Methods">
+                                                    Shipping methods
+                                                </a>
+                                            </li>
+                                            <li data-id="shipping-providers">
+                                                <a class="dropdown-item" href="/backend/Admin/Shipping/Providers">
+                                                    Shipping rate computation methods
+                                                </a>
+                                            </li>
+                                            <li class="dropdown-divider"></li>
+                                            <li data-id="tax-header" class="dropdown-header h6">Tax</li>
+                                            <li data-id="tax-providers">
+                                                <a class="dropdown-item" href="/backend/Admin/Tax/Providers">
+                                                    Tax providers
+                                                </a>
+                                            </li>
+                                            <li data-id="tax-categories">
+                                                <a class="dropdown-item" href="/backend/Admin/Tax/Categories">
+                                                    Tax categories
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="payment-methods">
+                                        <a class="dropdown-item" href="/backend/Admin/Payment/Providers">
+                                            <i class="fa-fw far fa-credit-card"></i>
+                                            Payment methods
+                                        </a>
+                                    </li>
+                                    <li data-id="list-settings" class="dropdown-group">
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <i class="fa-fw fa fa-bars"></i>
+                                            Lists
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li data-id="delivery-times">
+                                                <a class="dropdown-item" href="/backend/Admin/DeliveryTime/List">
+                                                    Delivery Times
+                                                </a>
+                                            </li>
+                                            <li data-id="quantity-units">
+                                                <a class="dropdown-item" href="/backend/Admin/QuantityUnit/List">
+                                                    Quantity units
+                                                </a>
+                                            </li>
+                                            <li data-id="weights">
+                                                <a class="dropdown-item" href="/backend/Admin/Measure/Weights">
+                                                    Weights
+                                                </a>
+                                            </li>
+                                            <li data-id="dimensions">
+                                                <a class="dropdown-item" href="/backend/Admin/Measure/Dimensions">
+                                                    Dimensions
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="email-accounts">
+                                        <a class="dropdown-item" href="/backend/Admin/EmailAccount/List">
+                                            <i class="fa-fw fa fa-envelope"></i>
+                                            Email Accounts
+                                        </a>
+                                    </li>
+                                    <li data-id="activity-types">
+                                        <a class="dropdown-item" href="/backend/Admin/ActivityLog/ListTypes">
+                                            <i class="fa-fw fa fa-eye"></i>
+                                            Activity Types
+                                        </a>
+                                    </li>
+                                    <li data-id="acl">
+                                        <a class="dropdown-item" href="/backend/Admin/Security/Permissions">
+                                            <i class="fa-fw fa fa-lock"></i>
+                                            Access control list
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="import">
+                                        <a class="dropdown-item" href="/backend/Admin/Import/List">
+                                            <i class="fa-fw fa fa-download "></i>
+                                            Import
+                                        </a>
+                                    </li>
+                                    <li data-id="export">
+                                        <a class="dropdown-item" href="/backend/Admin/Export/List">
+                                            <i class="fa-fw fa fa-upload "></i>
+                                            Export
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="themes">
+                                        <a class="dropdown-item" href="/backend/Admin/Theme/List">
+                                            <i class="fa-fw fa fa-fill-drip"></i>
+                                            Themes
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-system" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-database navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">System</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="system-log">
+                                        <a class="dropdown-item" href="/backend/Admin/Log/List">
+                                            <i class="fa-fw fa fa-fire"></i>
+                                            Log
+                                        </a>
+                                    </li>
+                                    <li data-id="queued-emails">
+                                        <a class="dropdown-item" href="/backend/Admin/QueuedEmail/List">
+                                            <i class="fa-fw fa fa-mail-bulk"></i>
+                                            Message Queue
+                                        </a>
+                                    </li>
+                                    <li data-id="maintenance">
+                                        <a class="dropdown-item" href="/backend/Admin/Common/Maintenance">
+                                            <i class="fa-fw fa fa-database"></i>
+                                            Maintenance
+                                        </a>
+                                    </li>
+                                    <li data-id="scheduled tasks">
+                                        <a class="dropdown-item" href="/backend/Admin/ScheduleTask/List">
+                                            <i class="fa-fw far fa-clock"></i>
+                                            Scheduled Tasks
+                                        </a>
+                                    </li>
+                                    <li data-id="seo-names">
+                                        <a class="dropdown-item" href="/backend/Admin/UrlRecord/List">
+                                            <i class="fa-fw fa fa-search"></i>
+                                            SEO Names
+                                        </a>
+                                    </li>
+                                    <li data-id="warnings">
+                                        <a class="dropdown-item" href="/backend/Admin/Common/Warnings">
+                                            <i class="fa-fw fa fa-exclamation-triangle"></i>
+                                            Warnings
+                                        </a>
+                                    </li>
+                                    <li data-id="system-info">
+                                        <a class="dropdown-item" href="/backend/Admin/Common/SystemInfo">
+                                            <i class="fa-fw fa fa-info-circle"></i>
+                                            System information
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="nav-plugins" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <i class="icm icm-icm icm-puzzle navbar-icon"></i>
+                                    <span class="navbar-label d-none d-lg-block">Plugins</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li data-id="1075279311">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Clickatell">
+                                            <i class="fa-fw far fa-paper-plane"></i>
+                                            Clickatell SMS Provider
+                                        </a>
+                                    </li>
+                                    <li data-id="1633211175">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.MegaSearch">
+                                            <i class="fa-fw fa fa-search"></i>
+                                            MegaSearch
+                                        </a>
+                                    </li>
+                                    <li data-id="2582712960">
+                                        <a class="dropdown-item" href="/backend/Plugins/SmartStore.SearchLog/List">
+                                            <i class="fa-fw fa fa-search"></i>
+                                            Search Log
+                                        </a>
+                                    </li>
+                                    <li data-id="1281274723">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.GDPR">
+                                            <i class="fa-fw fa fa-user-secret"></i>
+                                            GDPR
+                                        </a>
+                                    </li>
+                                    <li data-id="1435097483">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Azure">
+                                            <i class="fa-fw fab fa-windows"></i>
+                                            Microsoft Azure Services
+                                        </a>
+                                    </li>
+                                    <li data-id="9159951481">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Mailchimp">
+                                            <i class="fa-fw fab fa-mailchimp"></i>
+                                            MailChimp e-mail synchronization
+                                        </a>
+                                    </li>
+                                    <li data-id="4961088104">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.TinyImage">
+                                            <i class="fa-fw fa fa-compress-arrows-alt"></i>
+                                            TinyImage
+                                        </a>
+                                    </li>
+                                    <li data-id="6494372227">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.OutputCache">
+                                            <i class="fa-fw far fa-hdd"></i>
+                                            Output Cache
+                                        </a>
+                                    </li>
+                                    <li data-id="3713097826">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.DevTools">
+                                            <i class="fa-fw far fa-terminal"></i>
+                                            Developer Tools
+                                        </a>
+                                    </li>
+                                    <li data-id="5081827252">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.OrderNumberFormatter">
+                                            <i class="fa-fw far fa-file"></i>
+                                            Number Formatter
+                                        </a>
+                                    </li>
+                                    <li data-id="1533652161">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.GoogleMerchantCenter">
+                                            <i class="fa-fw fab fa-google"></i>
+                                            Google Merchant Center feed
+                                        </a>
+                                    </li>
+                                    <li data-id="3920778300">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.BizImporter">
+                                            <i class="fa-fw"></i>
+                                            SmartStore.biz Importer
+                                        </a>
+                                    </li>
+                                    <li data-id="0094965851">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Debitoor">
+                                            <i class="fa-fw fas fa-receipt"></i>
+                                            Debitoor
+                                        </a>
+                                    </li>
+                                    <li data-id="9960683765">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.ContentSlider">
+                                            <i class="fa-fw far fa-images"></i>
+                                            Content Slider
+                                        </a>
+                                    </li>
+                                    <li data-id="7620367831">
+                                        <a class="dropdown-item"
+                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.MegaMenu">
+                                            <i class="fa-fw far fa-list-alt"></i>
+                                            Mega Menu
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-id="plugins-manage">
+                                        <a class="dropdown-item" href="/backend/Admin/Plugin/List">
+                                            <i class="fa-fw fa fa-puzzle-piece"></i>
+                                            Manage plugins
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+
+                    <div class="collapse navbar-collapse ml-auto">
+                        <ul class="navbar-nav ml-auto">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle navbar-tool" href="javascript:void(0)"
+                                    title="Actions" data-toggle="dropdown">
+                                    <i class="icm icm-cog navbar-icon"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="http://demo.smartstore.com/backend/"
+                                        title="Public store - SmartStore.NET Demo Shop">
+                                        <i class="fa fa-fw fa-globe"></i>
+                                        SmartStore.NET Demo Shop
+                                    </a>
+                                    <a class="dropdown-item" href="http://demo.smartstore.com/backend/"
+                                        title="Public store - SmartStore.NET Demo-Shop 2">
+                                        <i class="fa fa-fw fa-globe"></i>
+                                        SmartStore.NET Demo-Shop 2
+                                    </a>
+                                    <a class="dropdown-item" href="/backend/Admin/Theme/Preview">
+                                        <i class="far fa-fw fa-eye"></i>
+                                        Preview Mode
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item"
+                                        href="/backend/Admin/Common/ClearCache?previousUrl=%2Fbackend%2FAdmin%2FOrder%2FShipmentList">
+                                        <i class="far fa-fw fa-trash-alt"></i>
+                                        Clear cache
+                                    </a>
+                                    <a class="dropdown-item"
+                                        href="/backend/Admin/Common/ClearDatabaseCache?previousUrl=%2Fbackend%2FAdmin%2FOrder%2FShipmentList">
+                                        <i class="fa fa-fw"></i>
+                                        Clear database cache
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" id="restart-application" href="#"
+                                        data-url="/backend/Admin/Common/RestartApplication?previousUrl=%2Fbackend%2FAdmin%2FOrder%2FShipmentList">
+                                        <i class="fa fa-fw fa-power-off"></i>
+                                        Restart application
+                                    </a>
+                                </div>
+                            </li>
+
+                            <form action="/backend/Admin/Common/LanguageSelected" class="hide" data-ajax="true"
+                                data-ajax-complete="onLanguageChangedRequestCompleted();" id="form-languageselector"
+                                method="post"><input id="customerlanguage" name="customerlanguage" type="hidden"
+                                    value="2"></form>
+                            <li class="nav-item dropdown d-none d-md-block">
+                                <a class="nav-link dropdown-toggle navbar-tool" href="javascript:void(0)"
+                                    title="English" data-toggle="dropdown">
+                                    <i class="icm icm-earth navbar-icon"></i>
+                                    <span class="pl-2">EN</span>
+                                </a>
+                                <div id="language-selector" class="dropdown-menu dropdown-menu-right">
+                                    <a href="javascript:void(0)" data-lang-id="1" class="dropdown-item">
+                                        <img src="asset/img/flags/de.png" alt="Deutsch">
+                                        Deutsch
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="2" class="dropdown-item disabled">
+                                        <img src="asset/img/flags/us.png" alt="English">
+                                        English
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="3" class="dropdown-item">
+                                        <img src="asset/img/flags/nl.png" alt="Dutch">
+                                        Dutch
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="4" class="dropdown-item">
+                                        <img src="asset/img/flags/fr.png" alt="French">
+                                        French
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="5" class="dropdown-item">
+                                        <img src="asset/img/flags/ru.png" alt="Russian">
+                                        Russian
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="6" class="dropdown-item">
+                                        <img src="asset/img/flags/jp.png" alt="Japanese">
+                                        Japanese
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="7" class="dropdown-item">
+                                        <img src="asset/img/flags/es.png" alt="Español">
+                                        Español
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="8" class="dropdown-item">
+                                        <img src="asset/img/flags/sa.png" alt="Arabic (Saudi Arabia)">
+                                        Arabic (Saudi Arabia)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="9" class="dropdown-item">
+                                        <img src="asset/img/flags/in.png" alt="Hindi (India)">
+                                        Hindi (India)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="10" class="dropdown-item">
+                                        <img src="asset/img/flags/tr.png" alt="Turkish (Turkey)">
+                                        Turkish (Turkey)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="11" class="dropdown-item">
+                                        <img src="asset/img/flags/cn.png" alt="Chinese (Simplified, PRC)">
+                                        Chinese (Simplified, PRC)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="12" class="dropdown-item">
+                                        <img src="asset/img/flags/it.png" alt="Italian (Italy)">
+                                        Italian (Italy)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="13" class="dropdown-item">
+                                        <img src="asset/img/flags/pl.png" alt="Polish (Poland)">
+                                        Polish (Poland)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="14" class="dropdown-item">
+                                        <img src="asset/img/flags/pt.png" alt="Portuguese (Portugal)">
+                                        Portuguese (Portugal)
+                                    </a>
+                                    <a href="javascript:void(0)" data-lang-id="15" class="dropdown-item">
+                                        <img src="asset/img/flags/gr.png" alt="Greek (Greece)">
+                                        Greek (Greece)
+                                    </a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a href="/backend/Admin/Language/List" class="dropdown-item manage-languages">
+                                        Manage languages
+                                    </a>
+                                </div>
+                            </li>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#language-selector > .dropdown-item:not(.disabled, .manage-languages)").on('click', function () {
+                                        var el = $(this);
+                                        var langId = el.data("lang-id");
+                                        $("#customerlanguage").val(langId);
+                                        $("#form-languageselector").submit();
+                                    });
+                                });
+
+                                function onLanguageChangedRequestCompleted() {
+                                    location.reload();
+                                }
+                            </script>
+
+
+                            <li id="navtool-help" class="nav-item dropdown d-none d-md-block">
+                                <a class="nav-link dropdown-toggle navbar-tool" href="javascript:void(0)" title="Help"
+                                    data-toggle="dropdown">
+                                    <i class="icm icm-bubble-question navbar-icon"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="https://docs.smartstore.com/display/SMNET32/"
+                                        data-lang="en" target="help">
+                                        <i class="fa fa-fw fa-book"></i>
+                                        Documentation
+                                    </a>
+                                    <a class="dropdown-item"
+                                        href="http://community.smartstore.com/index.php?/&amp;k=880ea6a14ea49e853634fbdc5015a024&amp;setlanguage=1&amp;cal_id=&amp;langid=1"
+                                        data-lang="en" target="help">
+                                        <i class="fa fa-fw fa-comment"></i>
+                                        Community
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/backend/Admin/Home/About">
+                                        <i class="fa fa-fw fa-info-circle"></i>
+                                        About SmartStore.NET
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown ml-md-3">
+                                <a id="current-user" class="nav-link dropdown-toggle navbar-tool" data-toggle="dropdown"
+                                    title="demo" href="/backend/Admin/Customer/Edit/55040">
+
+                                    <i class="icm icm-user navbar-icon"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/backend/Admin/Customer/Edit/55040">
+                                        <i class="fa fa-fw fa-user"></i>
+                                        Account
+                                    </a>
+                                    <a class="dropdown-item" href="/backend/logout">
+                                        <i class="fal fa-fw fa-sign-out-alt"></i>
+                                        Logout?
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </nav>
+
+
+                <script type="text/javascript">
+
+                    $(function () {
+
+                        $("#restart-application").on('click', function (e) {
+                            e.preventDefault();
+                            $.throbber.show({
+                                message: "Restarting the application...",
+                                callback: function () {
+                                    setLocation($(e.target).data("url"));
+
+                                }
+                            });
+                            return false;
+                        });
+
+                        // add mainmenu tooltips;
+                        $('#tools [rel=tooltip]').tooltip({
+                            placement: 'bottom'
+                        });
+
+                    });
+
+                </script>
+
+
+                <div id="breadcrumb">
+                    <!-- SiteMapPath here-->
+
+                </div>
+            </header>
+
+
+
+            <div id="content">
+                <div class="cph">
+
+
+
+                    <form action="/backend/Admin/Order/ShipmentList" method="post" novalidate="novalidate">
+                        <div class="section-header">
+                            <div class="title">
+                                <i class="fa fa-truck"></i>
+                                Shipments
+                            </div>
+                            <div class="options">
+                                <a href="/backend/Admin/Order/PdfPackagingSlips?all=True" class="btn btn-secondary">
+                                    <i class="fa fa-print"></i>
+                                    <span>Print packaging slips (all)</span>
+                                </a>
+                                <button type="submit" id="exportpackagingslips-selected" class="btn btn-secondary">
+                                    <i class="fa fa-print"></i>
+                                    <span>Print packaging slips (selected)</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row mt-3 grid-filter">
+                            <div class="col-sm-6 col-lg-4 col-xl-3 form-group">
+                                <div class="ctl-label"><label for="StartDate">Start date</label><a class="hint" href="#"
+                                        onclick="return false;" tabindex="-1"
+                                        title="The start date (shipment creation date) for the search"><i
+                                            class="fa fa-question-circle"></i></a></div>
+
+
+
+                                <div class="input-group date datetimepicker-group" id="StartDate-parent" data-date=""
+                                    data-target-input="nearest">
+                                    <input class="form-control datetimepicker-input" data-format="L"
+                                        data-target="#StartDate-parent" data-val="true"
+                                        data-val-date="The field 'Start date' must be a date." id="StartDate"
+                                        name="StartDate" type="text" value="">
+                                    <div class="input-group-append input-group-addon" data-target="#StartDate-parent"
+                                        data-toggle="datetimepicker">
+                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                    </div>
+                                </div>
+
+                                <script data-origin="DateTime">
+                                    $(function () {
+                                        $("#StartDate-parent").datetimepicker({ format: 'L', useCurrent: false, locale: moment.locale() });
+                                    });
+                                </script>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 col-xl-3 form-group">
+                                <div class="ctl-label"><label for="EndDate">End date</label><a class="hint" href="#"
+                                        onclick="return false;" tabindex="-1"
+                                        title="The end date (shipment creation date) for the search."><i
+                                            class="fa fa-question-circle"></i></a></div>
+
+
+
+                                <div class="input-group date datetimepicker-group" id="EndDate-parent" data-date=""
+                                    data-target-input="nearest">
+                                    <input class="form-control datetimepicker-input" data-format="L"
+                                        data-target="#EndDate-parent" data-val="true"
+                                        data-val-date="The field 'End date' must be a date." id="EndDate" name="EndDate"
+                                        type="text" value="">
+                                    <div class="input-group-append input-group-addon" data-target="#EndDate-parent"
+                                        data-toggle="datetimepicker">
+                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                    </div>
+                                </div>
+
+                                <script data-origin="DateTime">
+                                    $(function () {
+                                        $("#EndDate-parent").datetimepicker({ format: 'L', useCurrent: false, locale: moment.locale() });
+                                    });
+                                </script>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-4 col-xl-3 form-group">
+                                <div class="ctl-label"><label for="TrackingNumber">Tracking number</label><a
+                                        class="hint" href="#" onclick="return false;" tabindex="-1"
+                                        title="Search by a specific tracking number."><i
+                                            class="fa fa-question-circle"></i></a></div>
+                                <input class="text-box single-line" id="TrackingNumber" name="TrackingNumber"
+                                    type="text" value="">
+                            </div>
+
+                            <div class="col-sm-6 col-lg-4 col-xl-3 form-group">
+                                <div class="ctl-label"><label>&nbsp;</label></div>
+                                <button type="submit" id="btnSearch" value="btnSearch"
+                                    class="btn btn-secondary btn-block">
+                                    <span>Search</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="t-widget t-grid grid-preservestate"
+                                data-statepreserver-href="/backend/Admin/Common/SetGridState"
+                                data-statepreserver-key="GridState.shipments-grid__Admin.Order.ShipmentList"
+                                id="shipments-grid">
+                                <div class="t-grid-pager t-grid-top">
+                                    <div class="t-status"><a class="t-icon t-refresh"
+                                            href="/backend/Admin/Order/ShipmentList?shipments-grid-size=25">Refresh</a>
+                                    </div>
+                                    <div class="t-pager t-reset"><a class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-first">first</span></a><a
+                                            class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-prev">prev</span></a>
+                                        <div class="t-numeric"></div><a class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-next">next</span></a><a
+                                            class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-last">last</span></a>
+                                    </div>
+                                    <div class="t-status-text">Displaying items 0 - 0 of 0</div>
+                                </div>
+                                <table cellspacing="0">
+                                    <colgroup>
+                                        <col style="width:50px">
+                                        <col>
+                                        <col style="width:80px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col style="width:50px">
+                                    </colgroup>
+                                    <thead class="t-grid-header">
+                                        <tr>
+                                            <th class="t-header" scope="col" style="text-align:center"><span
+                                                    class="t-link"><input id="mastercheckbox" type="checkbox"></span>
+                                            </th>
+                                            <th class="t-header" scope="col"><span class="t-link">ID</span></th>
+                                            <th class="t-header" scope="col" style="text-align:center;"><span
+                                                    class="t-link">Order #</span></th>
+                                            <th class="t-header" scope="col"><span class="t-link">Tracking number</span>
+                                            </th>
+                                            <th class="t-header" scope="col"><span class="t-link">Total weight</span>
+                                            </th>
+                                            <th class="t-header" scope="col"><span class="t-link">Date shipped</span>
+                                            </th>
+                                            <th class="t-header" scope="col"><span class="t-link">Date delivered</span>
+                                            </th>
+                                            <th class="t-header" scope="col" style="text-align:center;"><span
+                                                    class="t-link">&nbsp;</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="t-no-data">
+                                            <td colspan="8">No records to display.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="t-grid-pager t-grid-bottom">
+                                    <div class="t-status"><a class="t-icon t-refresh"
+                                            href="/backend/Admin/Order/ShipmentList?shipments-grid-size=25">Refresh</a>
+                                    </div>
+                                    <div class="t-pager t-reset"><a class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-first">first</span></a><a
+                                            class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-prev">prev</span></a>
+                                        <div class="t-numeric"></div><a class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-next">next</span></a><a
+                                            class="t-link t-state-disabled" href="#"><span
+                                                class="t-icon t-arrow-last">last</span></a>
+                                    </div>
+                                    <div class="t-status-text">Displaying items 0 - 0 of 0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+
+                            var selectedIds = [];
+
+                            $(document).ready(function () {
+
+                                //search button
+                                $('#btnSearch').click(function () {
+                                    //search
+                                    var grid = $('#shipments-grid').data('tGrid');
+                                    grid.currentPage = 1; //new search. Set page size to 1
+                                    grid.ajaxRequest();
+                                    //clear selected checkboxes
+                                    $('.checkboxGroups').attr('checked', false).change();
+                                    selectedIds = [];
+                                    return false;
+                                });
+
+
+                                //"Print packaging slips (selected)" button
+                                $('#exportpackagingslips-selected').click(function (e) {
+                                    e.preventDefault();
+                                    //redirect to required URL
+                                    setLocation('/backend/Admin/Order/PdfPackagingSlips?all=false&selectedIds=' + selectedIds.join(","));
+                                    return false;
+                                });
+
+
+                                $('#mastercheckbox').click(function () {
+                                    $('.checkboxGroups').attr('checked', $(this).is(':checked')).change();
+                                });
+
+                                //wire up checkboxes. 
+                                $(document).on('change', '#shipments-grid input[type=checkbox][id!=mastercheckbox]', function (e) {
+                                    var $check = $(this);
+                                    if ($check.is(":checked") == true) {
+                                        var checked = jQuery.inArray($check.val(), selectedIds);
+                                        if (checked == -1) {
+                                            //add id to selectedIds.  
+                                            selectedIds.push($check.val());
+                                        }
+                                    }
+                                    else {
+                                        var checked = jQuery.inArray($check.val(), selectedIds);
+                                        if (checked > -1) {
+                                            //remove id from selectedIds.  
+                                            selectedIds = $.grep(selectedIds, function (item, index) {
+                                                return item != $check.val();
+                                            });
+                                        }
+                                    }
+                                    updateMasterCheckbox();
+                                });
+                            });
+
+                            function onDataBinding(e) {
+                                var searchModel = {
+                                    StartDate: $('#StartDate').val(),
+                                    EndDate: $('#EndDate').val(),
+                                    TrackingNumber: $('#TrackingNumber').val()
+                                };
+                                e.data = searchModel;
+                            }
+
+                            function onDataBound(e) {
+
+                                $('#shipments-grid input[type=checkbox][id!=mastercheckbox]').each(function () {
+                                    var currentId = $(this).val();
+                                    var checked = jQuery.inArray(currentId, selectedIds);
+                                    //set checked based on if current checkbox's value is in selectedIds.  
+                                    $(this).attr('checked', checked > -1);
+                                });
+
+                                updateMasterCheckbox();
+                            }
+
+                            function updateMasterCheckbox() {
+                                var numChkBoxes = $('#shipments-grid input[type=checkbox][id!=mastercheckbox]').length;
+                                var numChkBoxesChecked = $('#shipments-grid input[type=checkbox][checked][id!=mastercheckbox]').length;
+                                $('#mastercheckbox').attr('checked', numChkBoxes == numChkBoxesChecked && numChkBoxes > 0);
+                            }
+                        </script>
+                    </form>
+                </div>
+                <div id="ajax-busy" class="">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <script src="asset/js/popper.min.js"></script>
+
+    <script src="asset/js/main.js"></script>
+
+
+</body>
+
+</html>
