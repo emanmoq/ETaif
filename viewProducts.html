@@ -1,71 +1,58 @@
 <html>
 
-<head>
-	<title>Control Panel</title>
-	<meta charset="utf-8">
-	<link rel=icon href="asset/img/logo.png" type="image/png">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Cairo|Poppins:400,500,700,800,900&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-	<link rel="stylesheet" href="asset/css/owl.carousel.min.css" type="text/css">
-	<link rel="stylesheet" href="asset/css/owl.carousel.css" type="text/css">
-	<link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="asset/css/icm.css" type="text/css">
-	<link rel="stylesheet" href="asset/css/style.css" type="text/css">
-	<link rel="stylesheet" href="asset/css/theme.css" type="text/css">
-
-
-
-	<script>
-		window.Res = {
-			"Common.Notification": "Alert",
-			"Common.Close": "Close",
-			"Common.On": "On",
-			"Common.OK": "OK",
-			"Common.Cancel": "Cancel",
-			"Common.Off": "Off",
-			"Products.Longdesc.More": "Show more",
-			"Products.Longdesc.Less": "Show less",
-			"Jquery.Validate.Email": "Please enter a valid email address.",
-			"Jquery.Validate.Required": "This field is required.",
-			"Jquery.Validate.Remote": "Please fix this field.",
-			"Jquery.Validate.Url": "Please enter a valid URL.",
-			"Jquery.Validate.Date": "Please enter a valid date.",
-			"Jquery.Validate.DateISO": "Please enter a valid date (ISO).",
-			"Jquery.Validate.Number": "Please enter a valid number.",
-			"Jquery.Validate.Digits": "Please enter only digits.",
-			"Jquery.Validate.Creditcard": "Please enter a valid credit card number.",
-			"Jquery.Validate.Equalto": "Please enter the same value again.",
-			"Jquery.Validate.Maxlength": "Please enter no more than {0} characters.",
-			"Jquery.Validate.Minlength": "Please enter at least {0} characters.",
-			"Jquery.Validate.Rangelength": "Please enter a value between {0} and {1} characters long.",
-			"jquery.Validate.Range": "Please enter a value between {0} and {1}.",
-			"Jquery.Validate.Max": "Please enter a value less than or equal to {0}.",
-			"Jquery.Validate.Min": "Please enter a value greater than or equal to {0}.",
-			"Admin.Common.AreYouSure": "Are you sure?",
-		};
-	</script>
-	<script>
-		try {
-			if (typeof navigator === 'undefined') navigator = {};
-			html = document.documentElement;
-			if (/Edge\/\d+/.test(navigator.userAgent)) { html.className += ' edge' }
-			else if ('mozMatchesSelector' in html) { html.className += ' moz' }
-			else if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) { html.className += ' ios' }
-			else if ('webkitMatchesSelector' in html) { html.className += ' wkit' };
-			html.className += (this.top === this.window ? ' not-' : ' ') + 'framed';
-		} catch (e) { }
-	</script>
-	<script>var ieMode = 0; try { if (document.documentMode) { ieMode = document.documentMode; html.className += ' ie iepost8 ie' + document.documentMode } else { html.className += ' not-ie' }; } catch (e) { }; navigator.isIE = ieMode</script>
-
-
-</head>
+	<head>
+		<title>Control Panel</title>
+		<meta charset="utf-8">
+		<link rel=icon href="asset/img/logo.png" type="image/png">
+	
+		<link rel="stylesheet" href="asset/css/icm.css" type="text/css">
+		<link rel="stylesheet" href="asset/css/theme.css" type="text/css">
+		<script src="asset/js/script2.js" type="text/javascript"></script>
+		<script src="asset/js/script1.js"></script>
+		<script>
+			window.Res = {
+				"Common.Notification": "Alert",
+				"Common.Close": "Close",
+				"Common.On": "On",
+				"Common.OK": "OK",
+				"Common.Cancel": "Cancel",
+				"Common.Off": "Off",
+				"Products.Longdesc.More": "Show more",
+				"Products.Longdesc.Less": "Show less",
+				"Jquery.Validate.Email": "Please enter a valid email address.",
+				"Jquery.Validate.Required": "This field is required.",
+				"Jquery.Validate.Remote": "Please fix this field.",
+				"Jquery.Validate.Url": "Please enter a valid URL.",
+				"Jquery.Validate.Date": "Please enter a valid date.",
+				"Jquery.Validate.DateISO": "Please enter a valid date (ISO).",
+				"Jquery.Validate.Number": "Please enter a valid number.",
+				"Jquery.Validate.Digits": "Please enter only digits.",
+				"Jquery.Validate.Creditcard": "Please enter a valid credit card number.",
+				"Jquery.Validate.Equalto": "Please enter the same value again.",
+				"Jquery.Validate.Maxlength": "Please enter no more than {0} characters.",
+				"Jquery.Validate.Minlength": "Please enter at least {0} characters.",
+				"Jquery.Validate.Rangelength": "Please enter a value between {0} and {1} characters long.",
+				"jquery.Validate.Range": "Please enter a value between {0} and {1}.",
+				"Jquery.Validate.Max": "Please enter a value less than or equal to {0}.",
+				"Jquery.Validate.Min": "Please enter a value greater than or equal to {0}.",
+				"Admin.Common.AreYouSure": "Are you sure?",
+			};
+		</script>
+		<script>
+			try {
+				if (typeof navigator === 'undefined') navigator = {};
+				html = document.documentElement;
+				if (/Edge\/\d+/.test(navigator.userAgent)) { html.className += ' edge' }
+				else if ('mozMatchesSelector' in html) { html.className += ' moz' }
+				else if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) { html.className += ' ios' }
+				else if ('webkitMatchesSelector' in html) { html.className += ' wkit' };
+				html.className += (this.top === this.window ? ' not-' : ' ') + 'framed';
+			} catch (e) { }
+		</script>
+		<script>var ieMode = 0; try { if (document.documentMode) { ieMode = document.documentMode; html.className += ' ie iepost8 ie' + document.documentMode } else { html.className += ' not-ie' }; } catch (e) { }; navigator.isIE = ieMode</script>
+	
+	
+	</head>
 
 <body class="">
 	<div id="page">
@@ -79,9 +66,9 @@
 					<a class="navbar-brand mx-0 mr-3" href="/backend/Admin">
 
 						<img class="navbar-img d-none d-lg-block"
-							src="/backend/Administration/Content/images/smartstore.svg" alt="smartstore.NET">
+							src="asset/img/logo.png" alt="smartstore.NET">
 						<img class="navbar-img d-lg-none"
-							src="/backend/Administration/Content/images/smartstore-icon.svg" alt="smartstore.NET">
+							src="asset/img/logo.png" alt="smartstore.NET">
 					</a>
 
 					<div id="navbar-menu" class="collapse navbar-collapse mr-auto">
@@ -846,69 +833,69 @@
 								</a>
 								<div id="language-selector" class="dropdown-menu dropdown-menu-right">
 									<a href="javascript:void(0)" data-lang-id="1" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/de.png" alt="Deutsch">
+										<img src="asset/img/flags/de.png" alt="Deutsch">
 										Deutsch
 									</a>
 									<a href="javascript:void(0)" data-lang-id="2" class="dropdown-item disabled">
-										<img src="/backend/Content/Images/flags/us.png" alt="English">
+										<img src="asset/img/flags/us.png" alt="English">
 										English
 									</a>
 									<a href="javascript:void(0)" data-lang-id="3" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/nl.png" alt="Dutch">
+										<img src="asset/img/flags/nl.png" alt="Dutch">
 										Dutch
 									</a>
 									<a href="javascript:void(0)" data-lang-id="4" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/fr.png" alt="French">
+										<img src="asset/img/flags/fr.png" alt="French">
 										French
 									</a>
 									<a href="javascript:void(0)" data-lang-id="5" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/ru.png" alt="Russian">
+										<img src="asset/img/flags/ru.png" alt="Russian">
 										Russian
 									</a>
 									<a href="javascript:void(0)" data-lang-id="6" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/jp.png" alt="Japanese">
+										<img src="asset/img/flags/jp.png" alt="Japanese">
 										Japanese
 									</a>
 									<a href="javascript:void(0)" data-lang-id="7" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/es.png" alt="Español">
+										<img src="asset/img/flags/es.png" alt="Español">
 										Español
 									</a>
 									<a href="javascript:void(0)" data-lang-id="8" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/sa.png" alt="Arabic (Saudi Arabia)">
+										<img src="asset/img/flags/sa.png" alt="Arabic (Saudi Arabia)">
 										Arabic (Saudi Arabia)
 									</a>
 									<a href="javascript:void(0)" data-lang-id="9" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/in.png" alt="Hindi (India)">
+										<img src="asset/img/flags/in.png" alt="Hindi (India)">
 										Hindi (India)
 									</a>
 									<a href="javascript:void(0)" data-lang-id="10" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/tr.png" alt="Turkish (Turkey)">
+										<img src="asset/img/flags/tr.png" alt="Turkish (Turkey)">
 										Turkish (Turkey)
 									</a>
 									<a href="javascript:void(0)" data-lang-id="11" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/cn.png" alt="Chinese (Simplified, PRC)">
+										<img src="asset/img/flags/cn.png" alt="Chinese (Simplified, PRC)">
 										Chinese (Simplified, PRC)
 									</a>
 									<a href="javascript:void(0)" data-lang-id="12" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/it.png" alt="Italian (Italy)">
+										<img src="asset/img/flags/it.png" alt="Italian (Italy)">
 										Italian (Italy)
 									</a>
 									<a href="javascript:void(0)" data-lang-id="13" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/pl.png" alt="Polish (Poland)">
+										<img src="asset/img/flags/pl.png" alt="Polish (Poland)">
 										Polish (Poland)
 									</a>
 									<a href="javascript:void(0)" data-lang-id="14" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/pt.png" alt="Portuguese (Portugal)">
+										<img src="asset/img/flags/pt.png" alt="Portuguese (Portugal)">
 										Portuguese (Portugal)
 									</a>
 									<a href="javascript:void(0)" data-lang-id="15" class="dropdown-item">
-										<img src="/backend/Content/Images/flags/gr.png" alt="Greek (Greece)">
+										<img src="asset/img/flags/gr.png" alt="Greek (Greece)">
 										Greek (Greece)
 									</a>
 
 									<div class="dropdown-divider"></div>
 
-									<a href="/backend/Admin/Language/List" class="dropdown-item manage-languages">
+									<a href="#" class="dropdown-item manage-languages">
 										Manage languages
 									</a>
 								</div>
@@ -1018,9 +1005,6 @@
 
 					<div class="section-header">
 						<div class="title">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-half"></i>
 							Product reviews
 						</div>
 						<div class="options">
@@ -1164,14 +1148,14 @@
 										<td>Cool!</td>
 										<td>Echt coole Brille. </td>
 										<td align="center">5</td>
-										<td align="center">
+										<td align="center" class="adminData">
 											 <input checked="checked" class="check-box form-check-input"
 												data-val="true"
-												data-val-required="&#39;Visible individually&#39; must not be empty."
-												id="VisibleIndividually" name="VisibleIndividually" type="checkbox"
-												value="true" /><input name="VisibleIndividually" type="hidden"
+												data-val-required="&#39;APPROVED&#39; must not be empty."
+												id="IsApproved" name="IsApproved" type="checkbox"
+												value="true" /><input name="IsApproved" type="hidden"
 												value="false" />
-											<span class="field-validation-valid" data-valmsg-for="VisibleIndividually"
+											<span class="field-validation-valid" data-valmsg-for="IsApproved"
 												data-valmsg-replace="true"></span></td>
 										<td align="center">3/26/2017 3:27:22 PM</td>
 									</tr>
@@ -1324,15 +1308,6 @@
 	</div>
 
 
-	<script
-		src="asset/js/eojrg-qvnhz-6byu59p8ww8q84dxh6nitekblkkzxu1?v=-4fQuw14v-DQJnuV8CkNxiJTiejlx44wnnEPEWZ5TTg1"></script>
-
-	<script src="asset/js/jquery.min.js"></script>
-	<script src="asset/js/popper.min.js"></script>
-	<script src="asset/js/bootstrap.min.js"></script>
-	<script src="asset/js/owl.carousel.js"></script>
-	<script src="asset/js/owl.carousel.min.js"></script>
-	<script src="asset/js/wow.js"></script>
 	<!--These need to be at the end of the page to ensure that all the controls requiring scripts have been rendered-->
 	<script type="text/javascript" src="asset/js/telerik.common.min.js"></script>
 	<script type="text/javascript" src="asset/js/telerik.textbox.min.js"></script>
@@ -1342,8 +1317,26 @@
 		jQuery(document).ready(function () {
 			jQuery('#categories-grid').tGrid({ columns: [{ "attr": " style=\"text-align:center\"", "title": "\u003cinput id=\u0027mastercheckbox\u0027 type=\u0027checkbox\u0027/\u003e", "template": "\u003cinput type=\u0027checkbox\u0027 name=\u0027checkedRecords\u0027 value=\u0027\u003c#= Id #\u003e\u0027 class=\u0027checkboxGroups\u0027/\u003e", "member": "Id", "type": "Number" }, { "title": "Category", "template": "\u003ca href=\"Edit/\u003c#= Id #\u003e\"\u003e\u003c#= Breadcrumb #\u003e\u003c/a\u003e", "member": "Breadcrumb", "type": "String" }, { "title": "Complete name", "member": "FullName", "type": "String" }, { "title": "Alias", "member": "Alias", "type": "String" }, { "attr": " align=\"center\"", "title": "Published", "template": "\u003ci class=\u0027fa fa-fw icon-active-\u003c#= Published #\u003e\u0027\u003e\u003c/i\u003e", "member": "Published", "type": "Boolean" }, { "attr": " align=\"center\"", "title": "Display order", "member": "DisplayOrder", "type": "Number" }, { "attr": " align=\"center\"", "title": "Limited to stores", "template": "\u003ci class=\u0027fa fa-fw icon-active-\u003c#= LimitedToStores #\u003e\u0027\u003e\u003c/i\u003e", "member": "LimitedToStores", "type": "Boolean" }], pageSize: 25, total: 0, currentPage: 1, pageSizesInDropDown: ["5", "10", "20", "50"], pageOnScroll: false, ajax: { "selectUrl": "/backend/Admin/Category/List?categories-grid-size=25" }, onDataBinding: onDataBinding, onDataBound: onDataBound, localization: { "addNew": "Add new record", "delete": "Delete", "cancel": "Cancel", "update": "Update", "insert": "Insert", "edit": "Edit", "select": "Select", "page": "Page ", "displayingItems": "Displaying items {0} - {1} of {2}", "pageOf": "of {0}", "filter": "Filter", "filterAnd": "And", "filterClear": "Clear Filter", "filterDateEq": "Is equal to", "filterDateGe": "Is after or equal to", "filterDateGt": "Is after", "filterDateLe": "Is before or equal to", "filterDateLt": "Is before", "filterDateNe": "Is not equal to", "filterNumberEq": "Is equal to", "filterNumberGe": "Is greater than or equal to", "filterNumberGt": "Is greater than", "filterNumberLe": "Is less than or equal to", "filterNumberLt": "Is less than", "filterNumberNe": "Is not equal to", "filterShowRows": "Show rows with value that", "filterStringEndsWith": "Ends with", "filterStringEq": "Is equal to", "filterStringNe": "Is not equal to", "filterStringStartsWith": "Starts with", "filterStringSubstringOf": "Contains", "groupHint": "Drag a column header and drop it here to group by that column", "filterEnumEq": "Is equal to", "filterEnumNe": "Is not equal to", "deleteConfirmation": "Are you sure you want to delete this record?", "filterSelectValue": "-Select value-", "filterBoolIsFalse": "is false", "filterBoolIsTrue": "is true", "noRecords": "No records to display.", "cancelChanges": "Cancel changes", "saveChanges": "Save changes", "refresh": "Refresh", "sortedAsc": "sorted ascending", "sortedDesc": "sorted descending", "unGroup": "ungroup", "filterForeignKeyEq": "Is equal to", "filterForeignKeyNe": "Is not equal to", "filterStringNotSubstringOf": "Does not contain", "filterOr": "Or" }, noRecordsTemplate: 'No records to display.' });
 		});
+		
 //]]>
 	</script>
+
+	    <script type="text/javascript">
+        //<![CDATA[
+        jQuery(document).ready(function () {
+            jQuery('#HomePageDisplayOrder').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#RecurringCycleLength').tTextBox({ val: 100, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#RecurringTotalCycles').tTextBox({ val: 10, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#AdditionalShippingCharge').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Weight').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Length').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Width').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#Height').tTextBox({ val: 0, step: 1, minValue: null, maxValue: null, digits: 4, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric', inputAttributes: {} });
+            jQuery('#MaxNumberOfDownloads').tTextBox({ val: 10, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+            jQuery('#DownloadExpirationDays').tTextBox({ val: null, step: 1, minValue: null, maxValue: null, digits: 0, groupSize: 3, negative: 1, text: 'Enter value', type: 'numeric' });
+        });
+        //]]>
+    </script>
 	<script src="asset/js/main.js"></script>
 
 

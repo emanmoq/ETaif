@@ -8,4 +8,9 @@ $(window).on('scroll', function () {
     $(".section-header").removeClass("sticky");
   }
 });
-});        
+
+$(".close").click(function(){
+  $(this).parent().hide();
+})
+
+});

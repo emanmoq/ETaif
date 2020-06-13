@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="asset/css/icm.css" type="text/css">
     <link rel="stylesheet" href="asset/css/theme.css" type="text/css">
+    <link rel="stylesheet" href="asset/css/customstyle.css" type="text/css">
+
+
     <script src="asset/js/script2.js" type="text/javascript"></script>
     <script src="asset/js/script1.js"></script>
     <script>
@@ -560,14 +563,14 @@
                                         </a>
                                     </li>
                                     <li data-id="export">
-                                        <a class="dropdown-item" href="/backend/Admin/Export/List">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw fa fa-upload "></i>
                                             Export
                                         </a>
                                     </li>
                                     <li class="dropdown-divider"></li>
                                     <li data-id="themes">
-                                        <a class="dropdown-item" href="/backend/Admin/Theme/List">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw fa fa-fill-drip"></i>
                                             Themes
                                         </a>
@@ -631,42 +634,37 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li data-id="6986192304">
-                                        <a class="dropdown-item"
-                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Clickatell">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw far fa-paper-plane"></i>
                                             Clickatell SMS Provider
                                         </a>
                                     </li>
                                     <li data-id="2056891916">
-                                        <a class="dropdown-item" href="/backend/Plugins/SmartStore.SearchLog/List">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw fa fa-search"></i>
                                             Search Log
                                         </a>
                                     </li>
                                     <li data-id="1628231328">
-                                        <a class="dropdown-item"
-                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.GDPR">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw fa fa-user-secret"></i>
                                             GDPR
                                         </a>
                                     </li>
                                     <li data-id="3781333941">
-                                        <a class="dropdown-item"
-                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.MegaSearch">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw fa fa-search"></i>
                                             MegaSearch
                                         </a>
                                     </li>
                                     <li data-id="0807670791">
-                                        <a class="dropdown-item"
-                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Azure">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw fab fa-windows"></i>
                                             Microsoft Azure Services
                                         </a>
                                     </li>
                                     <li data-id="0474097937">
-                                        <a class="dropdown-item"
-                                            href="/backend/Admin/Plugin/ConfigurePlugin?systemName=SmartStore.Mailchimp">
+                                        <a class="dropdown-item" href="#">
                                             <i class="fa-fw fab fa-mailchimp"></i>
                                             MailChimp e-mail synchronization
                                         </a>
@@ -1009,8 +1007,7 @@
                         </script>
 
                         <div data-product-id="0" id="product-edit" class="tabbable tabs-left tabs-autoselect row"
-                            data-tabselector-href="/backend/Admin/Common/SetSelectedTab"
-                            data-ajax-onsuccess="productEditTab_onAjaxSuccess">
+                            data-tabselector-href="#" data-ajax-onsuccess="productEditTab_onAjaxSuccess">
                             <aside class="col-lg-auto nav-aside">
                                 <ul class="nav nav-tabs nav-tabs-line flex-row flex-lg-column">
                                     <li class="nav-item"><a href="#product-edit-1" data-toggle="tab" data-loaded="true"
@@ -1991,8 +1988,8 @@
 
                                                             <div class="fileupload" data-accept="gif|jpe?g|png"
                                                                 data-show-remove-after-upload="true"
-                                                                data-upload-url="/backend/Admin/Picture/AsyncUpload?isTransient=True&amp;validate=True"
-                                                                data-fallback-url="//demo.smartstore.com/backend/media/image/0/default-image.png?size=250"
+                                                                data-upload-url="asset/img//default-image.png?isTransient=True&amp;validate=True"
+                                                                data-fallback-url="asset/img/default-image.png?size=250"
                                                                 id="upload-509591302">
                                                                 <!-- The global progress information -->
                                                                 <div class="fileupload-progress fade">
@@ -2054,13 +2051,90 @@
                                                     </script>
                                                     <span class="field-validation-valid" data-valmsg-for="PictureId"
                                                         data-valmsg-replace="true"></span>
+
+                                                    <div class="imageUploadded">
+                                                        <button type="button" class="close" data-dismiss="alert"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <img src="asset/img/action-t-shirt.jpg" alt="">
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </table>
 
                                     </div>
                                     <div class="tab-pane fade" role="tabpanel" id="product-edit-3">
-                                        Attributes
+                                        <table class="adminContent">
+                                            <tr>
+                                                <td class="adminTitle">
+                                                    <div class='ctl-label'><label for="attribSelect">Please choose
+                                                            Attributes</label><a class="hint" href="#"
+                                                            onclick="return false;" tabindex="-1"
+                                                            title="you can select Multiple"><i
+                                                                class="fa fa-question-circle"></i></a></div>
+                                                </td>
+                                                <td class="adminData">
+                                                    <select class="chosen-select attribSelect" id="attribSelect"
+                                                        name="field[]" tabindex="4" multiple>
+                                                        <option value='1'>name1</option>
+                                                        <option value='2'>
+                                                            name2</option>
+                                                        <option value='3'>name3
+                                                        </option>
+
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td class="adminTitle">
+                                                    <div class='ctl-label'><label for="productPrice">Does the property
+                                                            affect the price of the product?</label><a class="hint"
+                                                            href="#" onclick="return false;" tabindex="-1"
+                                                            title="check if it affect"><i
+                                                                class="fa fa-question-circle"></i></a></div>
+                                                </td>
+                                                <td class="priceAttr">
+                                                    <input  class="" data-val="true" id="productPrice"
+                                                        type="checkbox" value="true" onchange="showPriceBox(this)" />
+
+                                                    <script>
+                                                        function showPriceBox(checkboxElem) {
+                                                            if (checkboxElem.checked) {
+                                                                $("#newProductPrice").show();
+
+                                                            } else {
+                                                                $("#newProductPrice").hide();
+                                                            }
+                                                        }
+                                                    </script>
+
+                                                </td>
+                                            </tr>
+                                            <tr id="newProductPrice">
+                                                
+                                                <script>
+                                             $("#newProductPrice").hide();
+                                                    
+                                                </script>
+
+                                                <td class="adminTitle">
+                                                    <div class='ctl-label'><label for="NewPrice">Enter New
+                                                            Price</label><a class="hint" href="#"
+                                                            onclick="return false;" tabindex="-1" title="New Price"><i
+                                                                class="fa fa-question-circle"></i></a></div>
+                                                </td>
+                                                <td class="adminData">
+                                                    <input data-val="true"
+                                                        data-val-required="'New Product Price' should not be empty."
+                                                        id="NewPrice" name="Name" type="text" value="">
+
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
                                     </div>
 
 
@@ -2085,11 +2159,6 @@
 
 
     </div>
-
-
-
-
-
     <script src="asset/js/telerik.common.min.js"></script>
     <script src="asset/js/telerik.textbox.min.js"></script>
     <script src="asset/js/telerik.calendar.min.js"></script>
